@@ -2086,6 +2086,7 @@ GameObject:
   - component: {fileID: 584030271}
   - component: {fileID: 584030270}
   - component: {fileID: 584030269}
+  - component: {fileID: 584030274}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -2729,6 +2730,20 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -1636515391019944688, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!114 &584030274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584030267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e17a05b360b4946a8df0dfa6c31146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToSee: 1
+  ObjectName: 
 --- !u!1 &586784308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,6 +3814,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684903785}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &692634772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692634774}
+  - component: {fileID: 692634773}
+  m_Layer: 0
+  m_Name: Raycast Interactor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &692634773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692634772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e17a05b360b4946a8df0dfa6c31146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToSee: 1
+  ObjectName: 
+--- !u!4 &692634774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692634772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.799855, y: 3.965698, z: -2.2188947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &698806081
 GameObject:
   m_ObjectHideFlags: 0
@@ -7999,6 +8060,7 @@ GameObject:
   - component: {fileID: 1593342760}
   - component: {fileID: 1593342759}
   - component: {fileID: 1593342758}
+  - component: {fileID: 1593342763}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -8642,6 +8704,20 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -6447266317303757838, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!114 &1593342763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593342756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e17a05b360b4946a8df0dfa6c31146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToSee: 1
+  ObjectName: 
 --- !u!1 &1604619431
 GameObject:
   m_ObjectHideFlags: 0
@@ -12041,3 +12117,4 @@ SceneRoots:
   - {fileID: 1333387558}
   - {fileID: 210399391}
   - {fileID: 667615376}
+  - {fileID: 692634774}
