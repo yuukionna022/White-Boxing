@@ -1865,6 +1865,7 @@ GameObject:
   - component: {fileID: 544969331}
   - component: {fileID: 544969332}
   - component: {fileID: 544969333}
+  - component: {fileID: 544969334}
   m_Layer: 7
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -2080,6 +2081,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &544969334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544969323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830e825091b92144a8327f389e4673ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleOne: 0
 --- !u!1 &583352286
 GameObject:
   m_ObjectHideFlags: 0
@@ -10921,6 +10935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportationTarget: {fileID: 2122628900}
   player: {fileID: 544969323}
+  conditions: {fileID: 544969334}
 --- !u!1001 &3009193059632548736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11105,6 +11120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportationTarget: {fileID: 2123058206}
   player: {fileID: 544969323}
+  conditions: {fileID: 0}
 --- !u!33 &5706567740807852553
 MeshFilter:
   m_ObjectHideFlags: 0
