@@ -9,10 +9,11 @@ public class TeleportScript : MonoBehaviour
     public Transform teleportationTarget;
     public GameObject player;
     public PuzzleConditions conditions;
+
     void OnTriggerEnter(Collider Col)
     {
         Debug.Log("entered");
-        if (conditions.getPuzzleOne() == true)
+        if (conditions.getPuzzleOne())
         {
             player.transform.position = teleportationTarget.position;
         }
