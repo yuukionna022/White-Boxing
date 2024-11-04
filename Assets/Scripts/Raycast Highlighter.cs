@@ -12,7 +12,7 @@ public class RaycastHighlighter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        highlightColor = Color.green;
+        highlightColor = Color.white;
     }
 
     // Update is called once per frame
