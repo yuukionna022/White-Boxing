@@ -10,7 +10,7 @@ public class PuzzleOne : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+   
     }
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class PuzzleOne : MonoBehaviour
         if((transform.position - player.transform.position).sqrMagnitude < 25.0f)
         {
             Debug.Log("true");
+            puzzle.setPuzzleOne(true);
         }
     }
 

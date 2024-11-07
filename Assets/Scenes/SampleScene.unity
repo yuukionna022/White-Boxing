@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.017973013, g: 0.020423416, b: 0.02842505, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3775,14 +3774,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.62, z: 0}
 --- !u!54 &544969333
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4218,6 +4217,8 @@ MonoBehaviour:
   m_StopLineAtSelection: 1
   m_SnapEndpointIfAvailable: 1
   m_LineBendRatio: 0.5
+  m_BendingEnabledInteractionLayers:
+    m_Bits: 4294967295
   m_OverrideInteractorLineOrigin: 1
   m_LineOriginTransform: {fileID: 0}
   m_LineOriginOffset: 0
@@ -12415,6 +12416,8 @@ MonoBehaviour:
   m_StopLineAtSelection: 1
   m_SnapEndpointIfAvailable: 1
   m_LineBendRatio: 0.5
+  m_BendingEnabledInteractionLayers:
+    m_Bits: 4294967295
   m_OverrideInteractorLineOrigin: 1
   m_LineOriginTransform: {fileID: 0}
   m_LineOriginOffset: 0
@@ -19434,7 +19437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportationTarget: {fileID: 2123058206}
   player: {fileID: 544969323}
-  conditions: {fileID: 0}
+  conditions: {fileID: 544969334}
 --- !u!114 &5433568242606498076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19600,6 +19603,7 @@ GameObject:
   - component: {fileID: 7120092940763885940}
   - component: {fileID: 7120092940763885941}
   - component: {fileID: 7120092940763885942}
+  - component: {fileID: 7120092940763885943}
   m_Layer: 8
   m_Name: bookwithkey (1)
   m_TagString: Untagged
@@ -21068,6 +21072,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 544969323}
   puzzle: {fileID: 544969334}
+--- !u!135 &7120092940763885943
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691745941953183757}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.04
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &7379881901656694230
 MeshRenderer:
   m_ObjectHideFlags: 0

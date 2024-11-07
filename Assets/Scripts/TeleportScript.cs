@@ -16,6 +16,7 @@ public class TeleportScript : MonoBehaviour
         if (conditions.getPuzzleOne())
         {
             player.transform.position = teleportationTarget.position;
+      
         }
     }
 }
