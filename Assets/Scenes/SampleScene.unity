@@ -3888,7 +3888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 544969328}
-  m_TurnAmount: 30
+  m_TurnAmount: 20
   m_DebounceTime: 0.5
   m_EnableTurnLeftRight: 1
   m_EnableTurnAround: 1
@@ -19284,7 +19284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportationTarget: {fileID: 2122628900}
-  player: {fileID: 1591455427}
+  player: {fileID: 544969323}
   conditions: {fileID: 544969334}
 --- !u!54 &2914298324086811951
 Rigidbody:
