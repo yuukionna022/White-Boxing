@@ -1840,7 +1840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 294843715}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: attach point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6777,6 +6777,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 248896484188677357}
   - {fileID: 5023471177852803767}
   - {fileID: 2114296812}
   - {fileID: 1571938359}
@@ -8662,6 +8663,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105636597}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1113369730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113369731}
+  m_Layer: 8
+  m_Name: pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1113369731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113369730}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.65980214, y: -0.00000024959442, z: -0.0000000745058, w: 0.7514394}
+  m_LocalPosition: {x: -0.0052996366, y: -0.018700346, z: 0.00469997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5023471177852803767}
+  m_LocalEulerAnglesHint: {x: 82.57, y: 0, z: 0}
 --- !u!1 &1116469907
 GameObject:
   m_ObjectHideFlags: 0
@@ -14603,7 +14635,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 3
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -18683,16 +18715,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594354909031743063}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.70710295, y: -0.0023409673, z: 0.0023410888, w: 0.7071029}
-  m_LocalPosition: {x: 0.0184, y: -0.0261, z: 0.0031}
-  m_LocalScale: {x: 0.040777594, y: 0.04937537, z: 0.049376596}
+  m_LocalRotation: {x: -0.18706098, y: 0.008440941, z: -0.044280734, w: 0.9813136}
+  m_LocalPosition: {x: -0.947, y: 1.203, z: 1.708}
+  m_LocalScale: {x: 0.19557911, y: 0.1955736, z: 0.19557671}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 499644404361404513}
   - {fileID: 6636497319068580359}
   - {fileID: 6975989440367297441}
-  m_Father: {fileID: 5023471177852803767}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0.379}
+  m_Father: {fileID: 737344236}
+  m_LocalEulerAnglesHint: {x: -21.493, y: 2.041, z: -5.555}
 --- !u!4 &499644404361404513
 Transform:
   m_ObjectHideFlags: 0
@@ -18874,7 +18906,7 @@ GameObject:
   - component: {fileID: 546463381869811870}
   - component: {fileID: 2607601714753555986}
   - component: {fileID: 2607601714753555987}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: key (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19399,7 +19431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5773250509313242990}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19438,7 +19470,7 @@ GameObject:
   - component: {fileID: 8383452675339264343}
   - component: {fileID: 2193222234220395470}
   - component: {fileID: 7379881901656694230}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: backcover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19600,7 +19632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6975989440367297441}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: keyring1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19620,7 +19652,7 @@ GameObject:
   - component: {fileID: 3387069272834092381}
   - component: {fileID: 5148926148962831543}
   - component: {fileID: 5148926148962831542}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: paperinside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19656,17 +19688,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5691745941953183757}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.020792866, y: 0.8194347, z: 0.5723138, w: 0.02348223}
-  m_LocalPosition: {x: -0.8485, y: 1.2136, z: 1.8088}
+  m_LocalRotation: {x: 0.06724787, y: 0.83439726, z: 0.5470162, w: 0.005689919}
+  m_LocalPosition: {x: -0.8545, y: 1.2187, z: 1.7788}
   m_LocalScale: {x: 4.796277, y: 3.9609194, z: 3.9609187}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 248896484188677357}
   - {fileID: 8383452675339264343}
   - {fileID: 1481070885358513434}
   - {fileID: 2926092632894245833}
+  - {fileID: 1113369731}
   m_Father: {fileID: 737344236}
-  m_LocalEulerAnglesHint: {x: -69.549, y: 169.732, z: 10.047}
+  m_LocalEulerAnglesHint: {x: -65.796, y: 168.31, z: 16.793}
 --- !u!33 &5148926148962831541
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19941,7 +19973,7 @@ GameObject:
   - component: {fileID: 7120092940763885945}
   - component: {fileID: 7120092940763885946}
   - component: {fileID: 7120092940763885947}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: bookwithkey (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21010,7 +21042,7 @@ HingeJoint:
   m_Anchor: {x: 0.005, y: -0.02, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0036117292, y: -0.021794632, z: 0.001876823}
+  m_ConnectedAnchor: {x: -0.0036114152, y: -0.021794476, z: 0.0018768625}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -21340,7 +21372,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 1113369731}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -21522,7 +21554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   book: {fileID: 5691745941953183757}
-  player: {fileID: 544969323}
+  key: {fileID: 594354909031743063}
+  player: {fileID: 1665777673}
 --- !u!23 &7379881901656694230
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21579,7 +21612,7 @@ GameObject:
   - component: {fileID: 7774176009135333854}
   - component: {fileID: 6702360111865170418}
   - component: {fileID: 5433568242606498076}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: frontcover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21624,7 +21657,7 @@ GameObject:
   - component: {fileID: 6636497319068580359}
   - component: {fileID: 7037064792606245946}
   - component: {fileID: 3807413552910004063}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: keydoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21640,7 +21673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 499644404361404513}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: keybase1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21691,7 +21724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6553861137481402593}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
