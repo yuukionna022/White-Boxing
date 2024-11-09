@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DetectSpotlight : MonoBehaviour
 {
-    public Material visibleMaterial;
+    public GameObject itself;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +18,22 @@ public class DetectSpotlight : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collision collision)
+    private void OnTriggerEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Highlight")
+        Debug.Log("detect collision");
+        if (collision.gameObject.tag == "Highlight" || collision.gameObject.layer == 10)
         {
             Debug.Log("hit");
-            print("hit");
+            //collision.gameObject. = visibleMaterial;
+
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("detect collision 2");
+        if (collision.gameObject.tag == "Highlight" || collision.gameObject.layer == 10)
+        {
+            Debug.Log("hit 2");
             //collision.gameObject. = visibleMaterial;
 
         }

@@ -19,7 +19,7 @@ public class PuzzleOne : MonoBehaviour
     {
         if(key.key_grabbed())
         {
-            Debug.Log("true");
+            //Debug.Log("true");
             puzzle.setPuzzleOne(true);
         }
     }
