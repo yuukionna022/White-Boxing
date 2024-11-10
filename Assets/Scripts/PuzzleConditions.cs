@@ -16,10 +16,7 @@ public class PuzzleConditions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(somecondition is met)
-        //{
-        //    puzzleOne = true;
-        //}
+       
     }
 
     public bool getPuzzleOne()

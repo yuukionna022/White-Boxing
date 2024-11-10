@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -60,7 +61,7 @@ public class State
 
         if (direction.magnitude < visDist) // && angle < visAngle)
         {
-            Debug.Log("see"); 
+            UnityEngine.Debug.Log("see"); 
 
             return true;
         }
@@ -73,7 +74,7 @@ public class State
         Vector3 direction = player.position - npc.transform.position;
         if (direction.magnitude < attackDist)
         {
-            Debug.Log("can attack");
+            UnityEngine.Debug.Log("can attack");
             return true;
         }
         return false;
@@ -96,7 +97,7 @@ public class Idle : State
 
     public override void Update()
     {
-        Debug.Log("idle");
+        UnityEngine.Debug.Log("idle");
 
         if (CanSeePlayer())
         {
@@ -129,7 +130,7 @@ public class Pursue:State
     {
         //move towards player
         agent.SetDestination(player.position);
-        Debug.Log("chase");
+        UnityEngine.Debug.Log("chase");
         if (CanAttackPlayer())
         {
             nextState = new Attack(npc, agent, anim, player);
@@ -182,16 +183,18 @@ public class Scream : State
 public class Attack : State
 {
 
-    protected float height;
+    //protected float height;
     protected float orig_height;
-    protected float fly = 0.001f;
-    protected float range = 25.0f;
+    [SerializeField] float fly = 5.0f;
+    [SerializeField] float range = 15.0f;
+    protected Vector3 pos;
 
     public Attack(GameObject npc, NavMeshAgent agent, Animator anim, Transform player)
         : base(npc, agent, anim, player)
     {
         name = STATE.ATTACK;
-        orig_height = agent.transform.position.y;
+        orig_height = npc.transform.position.y;
+        pos = npc.transform.position;
     }
 
     public override void Enter()
@@ -203,19 +206,15 @@ public class Attack : State
     public override void Update()
     {
 
-        Debug.Log("fly");
-        agent.transform.position = new Vector3(agent.transform.position.x, height, agent.transform.position.z);
-
-        height += fly * Time.deltaTime;
-
-        if (height > orig_height + range || height <= orig_height + (orig_height/2))
-        {
-            fly *= -1;
-        }
+        UnityEngine.Debug.Log("fly");
+        float newYpos = Mathf.Sin(Time.time * fly) * range + pos.y;
+        npc.transform.position = new Vector3(npc.transform.position.x, newYpos, npc.transform.position.z);
+        UnityEngine.Debug.Log(newYpos);
+        UnityEngine.Debug.Log(npc.transform.position);
 
         if (!CanAttackPlayer())
         {
-            agent.transform.position = new Vector3(agent.transform.position.x, orig_height, agent.transform.position.z);
+            npc.transform.position = new Vector3(npc.transform.position.x, orig_height, npc.transform.position.z);
             nextState = new Pursue(npc, agent, anim, player);
             stage = EVENT.EXIT;
         }
