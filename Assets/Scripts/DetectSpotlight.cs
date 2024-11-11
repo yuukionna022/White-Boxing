@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class DetectSpotlight : MonoBehaviour
 {
-    //public GameObject itself;
-    //private GameObject words;
-    //private MeshRenderer wordRenderer;
+    Material originalMaterial, tempMaterial;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +31,12 @@ public class DetectSpotlight : MonoBehaviour
             collision.gameObject.GetComponent<MeshRenderer>().enabled = true;
             //wordRenderer.enabled = true;
 
+        } 
+
+        if(collision.gameObject.tag == "Book Highlight")
+        {
+            Debug.Log("hit book");
+            Renderer rend = collision.gameObject.GetComponent<Renderer>();
         }
     }
 
@@ -45,6 +50,10 @@ public class DetectSpotlight : MonoBehaviour
             other.gameObject.GetComponent<MeshRenderer>().enabled = false;
             //wordRenderer.enabled = true;
 
+        }
+        if (other.gameObject.tag == "Book Highlight")
+        {
+            Debug.Log("hit book exit");
         }
     }
 
