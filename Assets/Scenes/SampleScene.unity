@@ -892,7 +892,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 8147827160246547151}
-  ogMaterial: {fileID: 2100000, guid: b932ede80410d1c44ac53a4b97fc52f0, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6cf5880ef9425ba4b969c444cb14dfe3, type: 2}
 --- !u!65 &167985112
 BoxCollider:
@@ -3466,7 +3465,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 8147827161141961941}
-  ogMaterial: {fileID: 2100000, guid: b932ede80410d1c44ac53a4b97fc52f0, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6cf5880ef9425ba4b969c444cb14dfe3, type: 2}
 --- !u!65 &457573045
 BoxCollider:
@@ -4041,7 +4039,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
-  ogMaterial: {fileID: 0}
   highlightMaterial: {fileID: 0}
 --- !u!1001 &500674325
 PrefabInstance:
@@ -5346,7 +5343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 4140682152621858271}
-  ogMaterial: {fileID: 2100000, guid: b932ede80410d1c44ac53a4b97fc52f0, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6cf5880ef9425ba4b969c444cb14dfe3, type: 2}
 --- !u!4 &644152394 stripped
 Transform:
@@ -7637,7 +7633,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 8147827161750281571}
-  ogMaterial: {fileID: 2100000, guid: b932ede80410d1c44ac53a4b97fc52f0, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6cf5880ef9425ba4b969c444cb14dfe3, type: 2}
 --- !u!65 &1019696918
 BoxCollider:
@@ -7949,7 +7944,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 8147827161744452875}
-  ogMaterial: {fileID: 2100000, guid: b932ede80410d1c44ac53a4b97fc52f0, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6cf5880ef9425ba4b969c444cb14dfe3, type: 2}
 --- !u!65 &1052359836
 BoxCollider:
@@ -7985,7 +7979,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 4140682152620223927}
-  ogMaterial: {fileID: 2100000, guid: b932ede80410d1c44ac53a4b97fc52f0, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6cf5880ef9425ba4b969c444cb14dfe3, type: 2}
 --- !u!65 &1063578711
 BoxCollider:
@@ -8720,7 +8713,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 4140682152173601307}
-  ogMaterial: {fileID: 2100000, guid: b932ede80410d1c44ac53a4b97fc52f0, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6cf5880ef9425ba4b969c444cb14dfe3, type: 2}
 --- !u!65 &1176319032
 BoxCollider:
@@ -13387,7 +13379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 4140682153630929921}
-  ogMaterial: {fileID: 2100000, guid: b932ede80410d1c44ac53a4b97fc52f0, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6cf5880ef9425ba4b969c444cb14dfe3, type: 2}
 --- !u!65 &1620416765
 BoxCollider:
@@ -19973,9 +19964,11 @@ GameObject:
   - component: {fileID: 8383452675339264343}
   - component: {fileID: 2193222234220395470}
   - component: {fileID: 7379881901656694230}
+  - component: {fileID: 8383452675339264345}
+  - component: {fileID: 8383452675339264344}
   m_Layer: 8
   m_Name: backcover
-  m_TagString: Untagged
+  m_TagString: Book Highlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22912,9 +22905,11 @@ GameObject:
   - component: {fileID: 6702360111865170418}
   - component: {fileID: 5433568242606498076}
   - component: {fileID: 9202220286587218237}
+  - component: {fileID: 9202220286587218239}
+  - component: {fileID: 9202220286587218238}
   m_Layer: 8
   m_Name: frontcover
-  m_TagString: Untagged
+  m_TagString: Book Highlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23295,6 +23290,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5023471177852803767}
   m_LocalEulerAnglesHint: {x: 0, y: 179.409, z: 0.999}
+--- !u!65 &8383452675339264344
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3320663219557551069}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010000007, y: 0.03589788, z: 0.010000005}
+  m_Center: {x: -0.0000002395586, y: 0.012956536, z: -0.00000005960834}
+--- !u!114 &8383452675339264345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3320663219557551069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf0e2d83bf64874e9ee89498d2f527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 3320663219557551069}
+  highlightMaterial: {fileID: 2100000, guid: d78a1c986fe9e434d9b4fa1e39d5001e, type: 2}
 --- !u!1 &8735135852017649870
 GameObject:
   m_ObjectHideFlags: 0
@@ -23401,6 +23431,41 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010000009, y: 0.010000174, z: 0.0032105937}
   m_Center: {x: -0.000009789517, y: 0.000011834206, z: -0.0033946505}
+--- !u!65 &9202220286587218238
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381699141865519881}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010000011, y: 0.010000138, z: 0.010000004}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9202220286587218239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381699141865519881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf0e2d83bf64874e9ee89498d2f527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 7381699141865519881}
+  highlightMaterial: {fileID: 2100000, guid: d78a1c986fe9e434d9b4fa1e39d5001e, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -42,6 +42,12 @@ public class DetectSpotlight : MonoBehaviour
 
             }
         }
+        
+        if (collision.gameObject.layer == 8 && collision.gameObject.tag == "Book Highlight")
+        {
+            HighlightedBook book = collision.gameObject.GetComponent<HighlightedBook>();
+            book.highlight();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -64,6 +70,11 @@ public class DetectSpotlight : MonoBehaviour
                 HighlightedBook book = other.gameObject.GetComponent<HighlightedBook>();
                 book.undoHighlight();
             }
+        }
+        if (other.gameObject.layer == 8 && other.gameObject.tag == "Book Highlight")
+        {
+            HighlightedBook book = other.gameObject.GetComponent<HighlightedBook>();
+            book.undoHighlight();
         }
     }
 
