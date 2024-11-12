@@ -21,39 +21,49 @@ public class DetectSpotlight : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
- 
-        
-        Debug.Log("detect collision");
-        if (collision.gameObject.tag == "Highlight" || collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == 10)
         {
-            Debug.Log("hit");
-            //collision.gameObject. = visibleMaterial;
-            collision.gameObject.GetComponent<MeshRenderer>().enabled = true;
-            //wordRenderer.enabled = true;
 
-        } 
+            Debug.Log("detect collision");
+            if (collision.gameObject.tag == "Highlight")
+            {
+                Debug.Log("hit");
+                //collision.gameObject. = visibleMaterial;
+                collision.gameObject.GetComponent<MeshRenderer>().enabled = true;
+                //wordRenderer.enabled = true;
 
-        if(collision.gameObject.tag == "Book Highlight")
-        {
-            Debug.Log("hit book");
-            Renderer rend = collision.gameObject.GetComponent<Renderer>();
+            }
+
+            if (collision.gameObject.tag == "Book Highlight")
+            {
+                Debug.Log("hit book");
+                HighlightedBook book = collision.gameObject.GetComponent<HighlightedBook>();
+                book.highlight();
+
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("collision gone");
-        if (other.gameObject.tag == "Highlight" || other.gameObject.layer == 10)
+        if (other.gameObject.layer == 10)
         {
-            Debug.Log("hit");
-            //collision.gameObject. = visibleMaterial;
-            other.gameObject.GetComponent<MeshRenderer>().enabled = false;
-            //wordRenderer.enabled = true;
+            Debug.Log("collision gone");
+            if (other.gameObject.tag == "Highlight")
+            {
+                Debug.Log("hit");
+                //collision.gameObject. = visibleMaterial;
+                other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                //wordRenderer.enabled = true;
 
-        }
-        if (other.gameObject.tag == "Book Highlight")
-        {
-            Debug.Log("hit book exit");
+            }
+            if (other.gameObject.tag == "Book Highlight")
+            {
+                Debug.Log("hit book exit");
+                Debug.Log("hit book");
+                HighlightedBook book = other.gameObject.GetComponent<HighlightedBook>();
+                book.undoHighlight();
+            }
         }
     }
 
