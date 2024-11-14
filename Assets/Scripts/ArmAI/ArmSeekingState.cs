@@ -32,8 +32,9 @@ public class ArmSeekingState : MonoBehaviour
             }
 
 
-            Debug.Log("Layer: " + hitInfo.collider.gameObject.layer);
-            Debug.Log("Tag: " + hitInfo.collider.tag);
+            //Debug.Log("Layer: " + hitInfo.collider.gameObject.layer);
+            //Debug.Log("Tag: " + hitInfo.collider.tag);
+
             //Some arm seeking actions
         }
         //else

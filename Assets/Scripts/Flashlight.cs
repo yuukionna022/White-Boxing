@@ -7,7 +7,7 @@ public class Flashlight : MonoBehaviour
     public Material lens;
     private Light _light;
     private AudioSource _audioSource;
-    private bool hasPickedUp;
+    public bool hasPickedUp;
 
     void Start()
     {
