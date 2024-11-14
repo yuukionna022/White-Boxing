@@ -10,6 +10,7 @@ public class TeleportScript : MonoBehaviour
     public GameObject player;
     public PuzzleConditions conditions;
     public bool teleporting = false;
+    public TeleportRoom room;
 
 
     void OnTriggerEnter(Collider Col)
@@ -18,8 +19,9 @@ public class TeleportScript : MonoBehaviour
         if (conditions.getPuzzleOne())
         {
             teleporting = true;
-            player.transform.position = teleportationTarget.position;
-            player.transform.Rotate(0.0f, 180.0f, 0.0f);
+            room.teleportRoom();
+           // player.transform.position = teleportationTarget.position;
+           // player.transform.Rotate(0.0f, 180.0f, 0.0f);
                    
         }
     }

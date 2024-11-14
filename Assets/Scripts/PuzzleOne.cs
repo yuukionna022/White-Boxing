@@ -8,6 +8,7 @@ public class PuzzleOne : MonoBehaviour
     public PuzzleConditions puzzle;
     public key key;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class PuzzleOne : MonoBehaviour
         {
             //Debug.Log("true");
             puzzle.setPuzzleOne(true);
+       
         }
     }
 
