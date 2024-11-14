@@ -10,8 +10,6 @@ public class GrabScript : MonoBehaviour
     public GameObject player;
     private XRGrabInteractable grabbable;
     private XRGrabInteractable key_grabbable;
-    public TeleportScript teleport;
-    private Transform originalParent;
 
     // Start is called before the first frame update
     void Start()
@@ -35,13 +33,13 @@ public class GrabScript : MonoBehaviour
             key_grabbable.enabled = false;
 
         }
+    }
 
-        if (teleport.getTeleporting())
-        {
-            grabbable.enabled = false;
-            key_grabbable.enabled = false;
-            book.SetActive(false);
-            key.SetActive(false);
-        }
+    public void Drop()
+    {
+        grabbable.enabled = false;
+        key_grabbable.enabled = false;
+        book.SetActive(false);
+        key.SetActive(false);
     }
 }

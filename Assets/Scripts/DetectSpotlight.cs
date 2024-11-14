@@ -24,10 +24,10 @@ public class DetectSpotlight : MonoBehaviour
         if (collision.gameObject.layer == 10)
         {
 
-            Debug.Log("detect collision");
+            //Debug.Log("detect collision");
             if (collision.gameObject.tag == "Highlight")
             {
-                Debug.Log("hit");
+               // Debug.Log("hit");
                 //collision.gameObject. = visibleMaterial;
                 collision.gameObject.GetComponent<MeshRenderer>().enabled = true;
                 //wordRenderer.enabled = true;
@@ -36,7 +36,7 @@ public class DetectSpotlight : MonoBehaviour
 
             if (collision.gameObject.tag == "Book Highlight")
             {
-                Debug.Log("hit book");
+               // Debug.Log("hit book");
                 HighlightedBook book = collision.gameObject.GetComponent<HighlightedBook>();
                 book.highlight();
 
@@ -54,10 +54,10 @@ public class DetectSpotlight : MonoBehaviour
     {
         if (other.gameObject.layer == 10)
         {
-            Debug.Log("collision gone");
+           // Debug.Log("collision gone");
             if (other.gameObject.tag == "Highlight")
             {
-                Debug.Log("hit");
+               // Debug.Log("hit");
                 //collision.gameObject. = visibleMaterial;
                 other.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 //wordRenderer.enabled = true;
@@ -65,8 +65,8 @@ public class DetectSpotlight : MonoBehaviour
             }
             if (other.gameObject.tag == "Book Highlight")
             {
-                Debug.Log("hit book exit");
-                Debug.Log("hit book");
+              //  Debug.Log("hit book exit");
+              //  Debug.Log("hit book");
                 HighlightedBook book = other.gameObject.GetComponent<HighlightedBook>();
                 book.undoHighlight();
             }
