@@ -15,7 +15,10 @@ public class LockDoor : MonoBehaviour
             otherDoor.SetActive(false);
             rigidDoor.SetActive(true);
             barrier1.SetActive(true);
-            room.teleportRoom();
+            if (conditions.getPuzzleOne() && !conditions.getPuzzleTwo())
+            {
+                room.teleportRoom();
+            }
         }
     }
 }

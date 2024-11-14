@@ -6,6 +6,6 @@ public class TeleportRoomTwo : MonoBehaviour
 {
     public void teleportRoom()
     {
-        transform.position = new Vector3(71.57949829101563f, 3.5617833137512209f, -2.6321864128112795f);
+        transform.position = new Vector3(49.05977249145508f, 3.5305943489074709f, 8.989874839782715f);
     }
 }
