@@ -6,6 +6,7 @@ public class LockDoor : MonoBehaviour
 {
     public PuzzleConditions conditions;
     public GameObject player, rigidDoor, barrier1, otherDoor;
+    public TeleportFirstRoom room;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +15,7 @@ public class LockDoor : MonoBehaviour
             otherDoor.SetActive(false);
             rigidDoor.SetActive(true);
             barrier1.SetActive(true);
+            room.teleportRoom();
         }
     }
 }
