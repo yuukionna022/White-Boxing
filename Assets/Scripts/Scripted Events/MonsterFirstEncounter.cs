@@ -25,6 +25,7 @@ public class MonsterFirstEncounter : MonoBehaviour
             if (timer > 200)
             {
                 //start hunting player
+
             }
         }
     }
