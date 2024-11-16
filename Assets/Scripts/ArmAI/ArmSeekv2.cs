@@ -7,11 +7,12 @@ public class ArmSeekv2 : MonoBehaviour
     public GameObject player;
     public GameObject arm;
     private int timerToAttack;
-    public static int timeToAttack = 50;
+    public int timeToAttack;
     private int durationTimer;
-    public static int attackDuration = 10;
+    public int attackDuration;
     private bool isAttacking;
     private bool attackInProgress;
+    public float armSpeed;
 
     private Vector3 playerPosition;
     private bool positionLocked;
@@ -46,10 +47,12 @@ public class ArmSeekv2 : MonoBehaviour
             attackPlayer();
             durationTimer += 1;
 
+            //Finished duration
             if (durationTimer > attackDuration)
             {
                 durationTimer = 0;
                 attackInProgress = false;
+                positionLocked = false;
             }
         }
     }
@@ -68,6 +71,6 @@ public class ArmSeekv2 : MonoBehaviour
             playerPosition = player.transform.position;
             positionLocked = true;
         }
-        arm.transform.position = Vector3.MoveTowards(arm.transform.position, playerPosition, 1);
+        arm.transform.position = Vector3.MoveTowards(arm.transform.position, playerPosition, armSpeed * Time.deltaTime);
     }
 }
