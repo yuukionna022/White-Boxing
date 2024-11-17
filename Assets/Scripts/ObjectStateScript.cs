@@ -51,11 +51,13 @@ public class ObjectStateScript
     protected void OnGrabbed(SelectEnterEventArgs args)
     {
         grabbed = true;
+        Debug.Log(grabbed);
     }
 
     protected void OnReleased(SelectExitEventArgs args)
     {
         grabbed = false;
+        Debug.Log(grabbed);
     }
 
     protected bool Dropped()
@@ -81,7 +83,7 @@ public class Grabbable : ObjectStateScript
 
     public override void Update()
     {
-        UnityEngine.Debug.Log("grabbable");
+       // UnityEngine.Debug.Log("grabbable");
 
         if (grabbed)
         {
@@ -101,6 +103,7 @@ public class Grabbed : ObjectStateScript
     public Grabbed(XRGrabInteractable grabbable) : base(grabbable)
     {
         name = STATE.GRABBED;
+        grabbed = true;
     }
 
     public override void Enter()
@@ -112,11 +115,16 @@ public class Grabbed : ObjectStateScript
 
     public override void Update()
     {
-        UnityEngine.Debug.Log("grabbed");
+       // UnityEngine.Debug.Log("grabbed");
 
         if (drop)
         {
             nextState = new Dropped(interactable);
+            stage = EVENT.EXIT;
+        }
+        else if (!grabbed)
+        {
+            nextState = new Grabbable(interactable);
             stage = EVENT.EXIT;
         }
     }
@@ -145,7 +153,7 @@ public class Dropped : ObjectStateScript
 
     public override void Update()
     {
-        UnityEngine.Debug.Log("dropped");
+       // UnityEngine.Debug.Log("dropped");
         interactable.enabled = false;
         
     }
