@@ -23,7 +23,11 @@ public class key : MonoBehaviour
         {
             grabbed = false;
         }
+
+
     }
+
+
 
     public bool key_grabbed()
     {

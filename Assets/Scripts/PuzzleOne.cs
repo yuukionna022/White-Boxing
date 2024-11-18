@@ -6,21 +6,14 @@ public class PuzzleOne : MonoBehaviour
 {
     
     public PuzzleConditions puzzle;
-    public key key;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-   
-    }
+    public BookGrabbable key;
 
     // Update is called once per frame
     void Update()
     {
-        if(key.key_grabbed())
+        if(key.Grabbed())
         {
-            //Debug.Log("true");
+            Debug.Log("true");
             puzzle.setPuzzleOne(true);
        
         }

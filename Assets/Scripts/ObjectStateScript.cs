@@ -7,7 +7,7 @@ public class ObjectStateScript
 {
     public enum STATE
     {
-        GRABBABLE, GRABBED, DROPPED
+        GRABBABLE, GRABBED, DROPPED, DEACTIVE
     };
 
     public enum EVENT
@@ -21,10 +21,15 @@ public class ObjectStateScript
     protected ObjectStateScript nextState;
     protected bool grabbed;
     protected bool drop;
+    protected GameObject player;
+    protected GameObject self;
 
-    public ObjectStateScript(XRGrabInteractable grabbable)
+
+    public ObjectStateScript(XRGrabInteractable grabbable, GameObject player, GameObject self)
     {
         interactable = grabbable;
+        this.player = player;
+        this.self = self;
         grabbed = false;
         drop = false;
         interactable.selectEntered.AddListener(OnGrabbed);
@@ -60,18 +65,29 @@ public class ObjectStateScript
         Debug.Log(grabbed);
     }
 
-    protected bool Dropped()
+    public bool Dropped()
     {
         return drop;
+    }
+
+    public void Drop()
+    {
+        drop = true;
+    }
+
+    public bool Grabbed()
+    {
+        return grabbed;
     }
 
 }
 
 public class Grabbable : ObjectStateScript
 {
-    public Grabbable(XRGrabInteractable grabbable) : base(grabbable)
+    public Grabbable(XRGrabInteractable grabbable, GameObject player, GameObject self) : base(grabbable, player, self)
     {
         name = STATE.GRABBABLE;
+        interactable.enabled = true;
     }
 
     public override void Enter()
@@ -87,7 +103,7 @@ public class Grabbable : ObjectStateScript
 
         if (grabbed)
         {
-            nextState = new Grabbed(interactable);
+            nextState = new Grabbed(interactable, player, self);
             stage = EVENT.EXIT;
         }
     }
@@ -100,7 +116,7 @@ public class Grabbable : ObjectStateScript
 
 public class Grabbed : ObjectStateScript
 {
-    public Grabbed(XRGrabInteractable grabbable) : base(grabbable)
+    public Grabbed(XRGrabInteractable grabbable, GameObject player, GameObject self) : base(grabbable, player, self)
     {
         name = STATE.GRABBED;
         grabbed = true;
@@ -119,12 +135,12 @@ public class Grabbed : ObjectStateScript
 
         if (drop)
         {
-            nextState = new Dropped(interactable);
+            nextState = new Deactive(interactable, player, self);
             stage = EVENT.EXIT;
         }
         else if (!grabbed)
         {
-            nextState = new Grabbable(interactable);
+            nextState = new Dropped(interactable, player, self);
             stage = EVENT.EXIT;
         }
     }
@@ -139,7 +155,7 @@ public class Dropped : ObjectStateScript
 {
     
     
-    public Dropped(XRGrabInteractable grabbable) : base(grabbable)
+    public Dropped(XRGrabInteractable grabbable, GameObject player, GameObject self) : base(grabbable, player, self)
     {
         name = STATE.DROPPED;
     }
@@ -155,7 +171,40 @@ public class Dropped : ObjectStateScript
     {
        // UnityEngine.Debug.Log("dropped");
         interactable.enabled = false;
-        
+        if ((self.transform.position - player.transform.position).magnitude < 2.5f)
+        {
+            nextState = new Grabbable(interactable, player, self);
+            stage = EVENT.EXIT;
+        }
+
+
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+    }
+}
+
+public class Deactive : ObjectStateScript
+{
+
+
+    public Deactive(XRGrabInteractable grabbable, GameObject player, GameObject self) : base(grabbable, player, self)
+    {
+        name = STATE.DEACTIVE;
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+    }
+
+
+
+    public override void Update()
+    {
+        self.SetActive(false);
     }
 
     public override void Exit()
