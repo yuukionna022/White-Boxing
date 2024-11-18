@@ -7,37 +7,39 @@ public class wardrobe : MonoBehaviour
 {
 
     public GameObject player;
-    private CapsuleCollider collider;
+    public Collider self, playerCollider;
+    private WardrobeState state;
     
     // Start is called before the first frame update
     void Start()
     {
-        collider = player.GetComponent<CapsuleCollider>();
+        state = new Open(player, self);
+        playerCollider = player.GetComponent<Collider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        state = state.Process(); 
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
 
-      
-        if (other == collider)
+        if (other == playerCollider)
         {
-            Debug.Log("player in wardrobe");
+            UnityEngine.Debug.Log("player in wardrobe");
+            state.SetEntered(true);
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    protected void OnTriggerExit(Collider other)
     {
-     
-        if (other == collider)
+
+        if (other == playerCollider)
         {
-            Debug.Log("player left wardrobe");
+            UnityEngine.Debug.Log("player left wardrobe");
+            state.SetEntered(false);
         }
     }
-
 }
