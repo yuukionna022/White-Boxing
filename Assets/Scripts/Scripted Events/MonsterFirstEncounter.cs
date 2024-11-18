@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class MonsterFirstEncounter : MonoBehaviour
 {
-    public bool encounterTriggered;
+    private bool encounterTriggered;
     public Flashlight flashlight;
-    private int timer;
+    public GameObject arm;
+    public GameObject path1, path2;
+    private float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +23,11 @@ public class MonsterFirstEncounter : MonoBehaviour
         if (encounterTriggered)
         {
             //Start timer then arm starts hunting
-            timer += 1;
-            if (timer > 200)
+            timer += 1* Time.deltaTime;
+            if (timer > 500 * Time.deltaTime)
             {
                 //start hunting player
-
+                arm.transform.position = Vector3.MoveTowards(arm.transform.position, path1.transform.position, 50f);
             }
         }
     }

@@ -10,12 +10,14 @@ public class GrabScript : MonoBehaviour
     public GameObject player;
     private XRGrabInteractable grabbable;
     private XRGrabInteractable key_grabbable;
+    public bool isGrabbed;
 
     // Start is called before the first frame update
     void Start()
     {
         grabbable = book.GetComponent<XRGrabInteractable>();
         key_grabbable = key.GetComponent<XRGrabInteractable>();
+        isGrabbed = false;
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class GrabScript : MonoBehaviour
         {
             grabbable.enabled = true;
             key_grabbable.enabled = true;
-
+            isGrabbed = true;
         }
         else
         {
