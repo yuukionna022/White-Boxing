@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class FootstepScript : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class FootstepScript : MonoBehaviour
     public AudioClip[] footstepClips; //array of footstep clips
     public float minPitch = 0.9f;
     public float maxPitch = 1.1f;
-
+    public Vector2 thumbstickInput;
 
     void Start()
     {
@@ -29,14 +30,30 @@ public class FootstepScript : MonoBehaviour
 
      private bool isPlayerMoving()
     {
-        bool isKeyboardMoving = Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d");
+        //moving with keyboard test, isMoving updates every frame
+        bool isMoving;
+        isMoving = Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d");
 
-        //occulus input?
-        //float horizontal = Input.GetAxis("Oculus_GearVR_LThumbstickHorizontal");
-        //float vertical = Input.GetAxis("Oculus_GearVR_LThumbstickVertical");
+        //occulus input test
+        if (InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).TryGetFeatureValue(CommonUsages.primary2DAxis, out thumbstickInput))
+        {
+            if (thumbstickInput.magnitude > 0.1f)
+            {
+                Debug.Log("Moving");
+                isMoving = true;
+            }
+            else
+            {
+                Debug.Log("Not moving");
+                isMoving = false;
+            }
+        }
+        else
+        {
+            Debug.Log("Not detected.");
+        }
 
-        //return isKeyboardMoving || Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f;
-        return isKeyboardMoving;
+        return isMoving;
 
     }
 
