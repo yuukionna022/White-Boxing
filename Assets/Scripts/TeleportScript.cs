@@ -34,9 +34,7 @@ public class TeleportScript : MonoBehaviour
                 teleporting = false;
                 conditions.setState(1);
 
-            }
-
-            if (conditions.getPuzzleTwo() && conditions.getState() == 1)
+            } else if (conditions.getPuzzleTwo() && conditions.getState() == 1)
             {
                 teleporting = true;
                 room2.teleportRoom();

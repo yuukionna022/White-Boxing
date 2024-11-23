@@ -6,7 +6,7 @@ public class BookFling : MonoBehaviour
 {
     public GameObject obj1, obj2, obj3;
     public GameObject flingPath;
-    public GrabScript condition;
+    public BookGrabbable condition;
     public bool isFlinging;
     public float flingSpeed;
     public int flingCount = 0;
@@ -20,7 +20,7 @@ public class BookFling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (condition.isGrabbed)
+        if (condition.Grabbed())
         {
             isFlinging = true;
         }
