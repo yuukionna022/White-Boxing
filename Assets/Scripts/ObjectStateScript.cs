@@ -158,6 +158,7 @@ public class Dropped : ObjectStateScript
     public Dropped(XRGrabInteractable grabbable, GameObject player, GameObject self) : base(grabbable, player, self)
     {
         name = STATE.DROPPED;
+        interactable.enabled = false;
     }
 
     public override void Enter()
@@ -170,7 +171,7 @@ public class Dropped : ObjectStateScript
     public override void Update()
     {
        // UnityEngine.Debug.Log("dropped");
-        interactable.enabled = false;
+       // interactable.enabled = false;
         if ((self.transform.position - player.transform.position).magnitude < 2.5f)
         {
             nextState = new Grabbable(interactable, player, self);
