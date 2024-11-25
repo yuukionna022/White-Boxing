@@ -13024,8 +13024,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footstepSource: {fileID: 1130171197}
   footstepClips:
-  - {fileID: 8300000, guid: 25e91e5299f195647bc3de132719d7da, type: 3}
+  - {fileID: 8300000, guid: 668d37fce9e763046a190a394642e60d, type: 3}
   - {fileID: 8300000, guid: 209cfedb7f6640e48a6b938f721649b7, type: 3}
+  - {fileID: 8300000, guid: e16e725ddc241ca4ca926c1ff054b29b, type: 3}
   minPitch: 0.9
   maxPitch: 1.1
   thumbstickInput: {x: 0, y: 0}
