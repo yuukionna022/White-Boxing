@@ -7,6 +7,10 @@ TagManager:
   - Highlight
   - Book Highlight
   - Red Book
+  - Blue Book
+  - Green Book
+  - Purple Book
+  - Grey Book
   layers:
   - Default
   - TransparentFX

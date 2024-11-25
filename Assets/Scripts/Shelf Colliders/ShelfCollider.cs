@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TopShelf : MonoBehaviour
+public class ShelfCollider : MonoBehaviour
 {
     public bool conditionFulfilled;
     public int requiredNumber;
     public int bookCount;
+    public string tagName;
 
     // Start is called before the first frame update
     void Start()
@@ -30,14 +31,14 @@ public class TopShelf : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Red Book")
+        if (collision.gameObject.tag == tagName)
         {
             bookCount++;
         }
     }
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.tag == "Red Book")
+        if (collision.gameObject.tag == tagName)
         {
             bookCount--;
         }
