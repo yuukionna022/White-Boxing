@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Blue Book
       objectReference: {fileID: 0}
+    - target: {fileID: 5349659426179018070, guid: 22ac3a0bb14e7c94baaee8bc4e37ae7a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6996256481703072452, guid: 22ac3a0bb14e7c94baaee8bc4e37ae7a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

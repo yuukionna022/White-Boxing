@@ -36,10 +36,17 @@ public class DetectSpotlight : MonoBehaviour
 
             if (collision.gameObject.tag == "Book Highlight")
             {
-               // Debug.Log("hit book");
+                //Debug.Log("hit book");
                 HighlightedBook book = collision.gameObject.GetComponent<HighlightedBook>();
                 book.highlight();
 
+            } 
+
+            if(collision.gameObject.tag == "Arrow")
+            {
+                //Debug.Log("hit arrow");
+                HighlightArrow arrow = collision.gameObject.GetComponent<HighlightArrow>();
+                arrow.highlight();
             }
         }
         
@@ -69,6 +76,14 @@ public class DetectSpotlight : MonoBehaviour
               //  Debug.Log("hit book");
                 HighlightedBook book = other.gameObject.GetComponent<HighlightedBook>();
                 book.undoHighlight();
+            }
+
+            if (other.gameObject.tag == "Arrow")
+            {
+                //  Debug.Log("hit book exit");
+                //  Debug.Log("hit book");
+                HighlightArrow arrow = other.gameObject.GetComponent<HighlightArrow>();
+                arrow.undoHighlight();
             }
         }
         if (other.gameObject.layer == 8 && other.gameObject.tag == "Book Highlight")
