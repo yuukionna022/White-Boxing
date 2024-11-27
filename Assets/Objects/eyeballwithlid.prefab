@@ -27,12 +27,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3388728055100783194}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.02778244, y: 0.036297083, z: -0.08860016}
-  m_LocalScale: {x: 0.0008648473, y: 0.0087314695, z: 0.0010325959}
+  m_LocalRotation: {x: -0, y: -0, z: 0.70710677, w: 0.70710677}
+  m_LocalPosition: {x: -0.02778245, y: 0.036297105, z: -0.08859953}
+  m_LocalScale: {x: 0.0008648475, y: 0.00873147, z: 0.0010325959}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5198227069242167907}
+  m_Father: {fileID: 2301528014737388963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!33 &553532102924799046
 MeshFilter:
@@ -106,6 +106,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &3971291655190290230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2301528014737388963}
+  m_Layer: 0
+  m_Name: eyeball
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2301528014737388963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3971291655190290230}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5760982165060743186}
+  m_Father: {fileID: 5198227069242167907}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5740249522743981448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 59543e8242f4e314e9846ced2b30e888, type: 2}
     - target: {fileID: 919132149155446097, guid: 842e375242331f241a6ec07226f92430, type: 3}
       propertyPath: m_Name
-      value: eyelid 1
+      value: eyeballwithlid
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -180,7 +212,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 842e375242331f241a6ec07226f92430, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5760982165060743186}
+      addedObject: {fileID: 2301528014737388963}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 842e375242331f241a6ec07226f92430, type: 3}
 --- !u!4 &5198227069242167907 stripped
