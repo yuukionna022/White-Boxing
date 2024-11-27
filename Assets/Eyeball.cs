@@ -11,8 +11,8 @@ public class Eyeball : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player Collider");
-        max = 296.49f;
-        min = 244.36f;
+        max = 290f;
+        min = 249f;
         fixedx = transform.localEulerAngles.x;
         fixedz = transform.localEulerAngles.z;
     }
@@ -20,7 +20,7 @@ public class Eyeball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player != null && (player.transform.position - transform.position).magnitude < 6f)
+        if (player != null && (player.transform.position - transform.position).magnitude < 9f)
         {
             transform.LookAt(player.transform.position);
         }
