@@ -5,6 +5,7 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     public Material lens;
+    public ParticleSystem glowEmitter;
     private Light _light;
     private AudioSource _audioSource;
     public bool hasPickedUp;
@@ -20,20 +21,19 @@ public class Flashlight : MonoBehaviour
         _audioSource.Play();
         lens.EnableKeyword("_EMISSION");
         _light.enabled = true;
-
         hasPickedUp = true;
+        glowEmitter.startLifetime = 0;
     }
 
-    public void LighOff()
+    public void LightOff()
     {
         _audioSource.Play();
         lens.DisableKeyword("_EMISSION");
         _light.enabled = false;
-        
+        glowEmitter.startLifetime = 1;
     }
     public bool FlashlightPickedUp()
     {
         return hasPickedUp;
     }
-
 }
