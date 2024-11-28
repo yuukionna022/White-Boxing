@@ -25,7 +25,7 @@ public class Eyeball : MonoBehaviour
             transform.LookAt(player.transform.position);
         }
 
-        Debug.Log(transform.localEulerAngles);
+       // Debug.Log(transform.localEulerAngles);
 
         if (transform.localEulerAngles.y < min)
         {

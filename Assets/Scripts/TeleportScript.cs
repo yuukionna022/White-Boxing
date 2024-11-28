@@ -12,6 +12,7 @@ public class TeleportScript : MonoBehaviour
     public bool teleporting = false;
     public TeleportRoom room;
     public TeleportRoomTwo room2;
+    public bool entered = false;
 
 
 
@@ -21,16 +22,17 @@ public class TeleportScript : MonoBehaviour
         if (Col == player.GetComponent<CapsuleCollider>())
         {
 
-            Debug.Log("entered");
+           // Debug.Log("entered");
+           entered = true;
             if (conditions.getPuzzleOne() && conditions.getState() == 0)
             {
                 teleporting = true;
                 room.teleportRoom();
                 rigidDoor.SetActive(false);
                 grabbableDoor.SetActive(true);
-                Debug.Log("new door");
+               // Debug.Log("new door");
                 barrier1.SetActive(false);
-                Debug.Log("barrier gone");
+               // Debug.Log("barrier gone");
                 teleporting = false;
                 conditions.setState(1);
 
@@ -49,6 +51,11 @@ public class TeleportScript : MonoBehaviour
     public bool getTeleporting()
     {
         return teleporting;
+    }
+
+    public bool getEntered()
+    {
+        return entered;
     }
 
 
