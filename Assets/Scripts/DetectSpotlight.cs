@@ -21,86 +21,113 @@ public class DetectSpotlight : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.layer == 10)
+        GameObject other = collision.gameObject;
+        if (other.layer == 10)
         {
 
             //Debug.Log("detect collision");
-            if (collision.gameObject.tag == "Highlight")
+            if (other.tag == "Highlight")
             {
                // Debug.Log("hit");
                 //collision.gameObject. = visibleMaterial;
-                collision.gameObject.GetComponent<MeshRenderer>().enabled = true;
+               other.GetComponent<MeshRenderer>().enabled = true;
                 //wordRenderer.enabled = true;
 
             }
 
-            if (collision.gameObject.tag == "Book Highlight")
+            if (other.tag == "Book Highlight")
             {
                 //Debug.Log("hit book");
-                HighlightedBook book = collision.gameObject.GetComponent<HighlightedBook>();
+                HighlightedBook book = other.GetComponent<HighlightedBook>();
                 book.highlight();
 
             } 
 
-            if(collision.gameObject.tag == "Arrow")
+            if(other.tag == "Arrow")
             {
                 //Debug.Log("hit arrow");
-                HighlightArrow arrow = collision.gameObject.GetComponent<HighlightArrow>();
+                HighlightArrow arrow = other.GetComponent<HighlightArrow>();
                 arrow.highlight();
             }
         }
-        
-        if (collision.gameObject.layer == 8 && collision.gameObject.tag == "Book Highlight")
+        if (other.layer == 8)
         {
-            HighlightedBook book = collision.gameObject.GetComponent<HighlightedBook>();
-            book.highlight();
+            if (other.tag == "Book Highlight")
+            {
+                HighlightedBook book = other.GetComponent<HighlightedBook>();
+                book.highlight();
+            }
+
+            if (other.tag == "Key Highlight")
+            {
+                other.GetComponent<MeshRenderer>().enabled = true;
+            }
+
+            if (other.name == "Glow Emitter")
+            {
+                other.GetComponent<ParticleSystem>().maxParticles = 4;
+            }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider col)
     {
-        if (other.gameObject.layer == 10)
+        GameObject other = col.gameObject;
+        if (other.layer == 10)
         {
-           // Debug.Log("collision gone");
-            if (other.gameObject.tag == "Highlight")
+            // Debug.Log("collision gone");
+            if (other.tag == "Highlight")
             {
-               // Debug.Log("hit");
+                // Debug.Log("hit");
                 //collision.gameObject. = visibleMaterial;
-                other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                other.GetComponent<MeshRenderer>().enabled = false;
                 //wordRenderer.enabled = true;
 
             }
             if (other.gameObject.tag == "Book Highlight")
             {
-              //  Debug.Log("hit book exit");
-              //  Debug.Log("hit book");
-                HighlightedBook book = other.gameObject.GetComponent<HighlightedBook>();
+                //  Debug.Log("hit book exit");
+                //  Debug.Log("hit book");
+                HighlightedBook book = other.GetComponent<HighlightedBook>();
                 book.undoHighlight();
             }
 
-            if (other.gameObject.tag == "Arrow")
+            if (other.tag == "Arrow")
             {
                 //  Debug.Log("hit book exit");
                 //  Debug.Log("hit book");
-                HighlightArrow arrow = other.gameObject.GetComponent<HighlightArrow>();
+                HighlightArrow arrow = other.GetComponent<HighlightArrow>();
                 arrow.undoHighlight();
             }
         }
-        if (other.gameObject.layer == 8 && other.gameObject.tag == "Book Highlight")
+        if (other.layer == 8)
         {
-            HighlightedBook book = other.gameObject.GetComponent<HighlightedBook>();
-            book.undoHighlight();
+            if (other.tag == "Book Highlight")
+            {
+                HighlightedBook book = other.GetComponent<HighlightedBook>();
+                book.undoHighlight();
+            }
+
+            if (other.tag == "Key Highlight")
+            {
+                other.GetComponent<MeshRenderer>().enabled = false;
+            }
+
+            if (other.name == "Glow Emitter")
+            {
+                other.GetComponent<ParticleSystem>().maxParticles = 0;
+            }
         }
+
+        //private void OnCollisionEnter(Collision collision)
+        //{
+        //    Debug.Log("detect collision 2");
+        //    if (collision.gameObject.tag == "Highlight" || collision.gameObject.layer == 10)
+        //    {
+        //        Debug.Log("hit 2");
+        //        //collision.gameObject. = visibleMaterial;
+
+        //    }
+        //}
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log("detect collision 2");
-    //    if (collision.gameObject.tag == "Highlight" || collision.gameObject.layer == 10)
-    //    {
-    //        Debug.Log("hit 2");
-    //        //collision.gameObject. = visibleMaterial;
-
-    //    }
-    //}
 }

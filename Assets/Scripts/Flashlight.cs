@@ -22,7 +22,7 @@ public class Flashlight : MonoBehaviour
         lens.EnableKeyword("_EMISSION");
         _light.enabled = true;
         hasPickedUp = true;
-        glowEmitter.startLifetime = 0;
+        glowEmitter.maxParticles = 0;
     }
 
     public void LightOff()
@@ -30,7 +30,7 @@ public class Flashlight : MonoBehaviour
         _audioSource.Play();
         lens.DisableKeyword("_EMISSION");
         _light.enabled = false;
-        glowEmitter.startLifetime = 1;
+        glowEmitter.maxParticles = 4;
     }
     public bool FlashlightPickedUp()
     {

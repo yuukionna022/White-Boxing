@@ -23,30 +23,33 @@ public class RaycastHighlighter : MonoBehaviour
         Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hitInfo, distanceToSee))
         {
-            currRend = hitInfo.collider.gameObject.GetComponent<Renderer>();
-
-            if (currRend == rend)
-                return;
-
-            if (currRend && currRend != rend)
+            if (hitInfo.collider.gameObject.layer == 8)
             {
-                if (rend)
+                currRend = hitInfo.collider.gameObject.GetComponent<Renderer>();
+
+                if (currRend == rend)
+                    return;
+
+                if (currRend && currRend != rend)
                 {
-                    rend.sharedMaterial = originalMaterial;
+                    if (rend)
+                    {
+                        rend.sharedMaterial = originalMaterial;
+                    }
+
                 }
 
+                if (currRend)
+                    rend = currRend;
+                else
+                    return;
+
+                originalMaterial = rend.sharedMaterial;
+
+                tempMaterial = new Material(originalMaterial);
+                rend.material = tempMaterial;
+                rend.material.color = highlightColor;
             }
-
-            if (currRend)
-                rend = currRend;
-            else
-                return;
-
-            originalMaterial = rend.sharedMaterial;
-
-            tempMaterial = new Material(originalMaterial);
-            rend.material = tempMaterial;
-            rend.material.color = highlightColor;
         }
         else
         {
