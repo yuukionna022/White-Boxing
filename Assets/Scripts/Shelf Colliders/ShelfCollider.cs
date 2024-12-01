@@ -43,4 +43,9 @@ public class ShelfCollider : MonoBehaviour
             bookCount--;
         }
     }
+
+    public bool GetFulfilled()
+    {
+        return conditionFulfilled;
+    }
 }

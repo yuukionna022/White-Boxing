@@ -6,7 +6,7 @@ public class PuzzleConditions : MonoBehaviour
 {
 
     private bool puzzleOne = false;
-    public bool puzzleTwo = false;
+    private bool puzzleTwo = false;
     private int state = 0;
 
 
@@ -33,7 +33,7 @@ public class PuzzleConditions : MonoBehaviour
 
     public void setPuzzleTwo(bool condition)
     {
-        puzzleOne = condition;
+        puzzleTwo = condition;
     }
 
     public void setState(int x)
