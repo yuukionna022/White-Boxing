@@ -1510,6 +1510,7 @@ GameObject:
   - component: {fileID: 82632799}
   - component: {fileID: 82632798}
   - component: {fileID: 82632797}
+  - component: {fileID: 82632800}
   m_Layer: 0
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1580,7 +1581,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 82632798}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 82632800}
+        m_TargetAssemblyTypeName: TeleportPlayer, Assembly-CSharp
+        m_MethodName: teleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &82632798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1619,6 +1632,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82632795}
   m_CullTransparentMesh: 1
+--- !u!114 &82632800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82632795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9145d7d3bce734ebe60eadeebf28a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 544969323}
+  storePosition: {fileID: 773877172}
+  destination: {x: 60.38949, y: 0.7750001, z: 2.495066}
 --- !u!1 &87506768
 GameObject:
   m_ObjectHideFlags: 0
@@ -11442,7 +11470,7 @@ GameObject:
   - component: {fileID: 693781523}
   - component: {fileID: 693781522}
   m_Layer: 0
-  m_Name: Menu
+  m_Name: Start Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13617,7 +13645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 544969323}
   storePosition: {fileID: 773877172}
-  destination: {x: 60.38949, y: 0.7750001, z: 2.4950657}
+  destination: {x: 60.38949, y: 0.7750001, z: 2.495066}
 --- !u!114 &804486092
 MonoBehaviour:
   m_ObjectHideFlags: 0
