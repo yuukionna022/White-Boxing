@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 6077871511252192710}
   - component: {fileID: 5342478736962944974}
   - component: {fileID: 1473041405921668864}
+  - component: {fileID: 4453563252784710223}
   m_Layer: 0
   m_Name: wardrobebase
   m_TagString: Untagged
@@ -527,6 +528,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0045106574, y: 0.01920319, z: 0.00023926083}
   m_Center: {x: 0.00000887257, y: -0.0000000011920929, z: -0.0058690463}
+--- !u!65 &4453563252784710223
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000842498769943425}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.004274562, y: 0.00028953553, z: 0.010475356}
+  m_Center: {x: 0.0001511071, y: -0.00945723, z: 0.00007479131}
 --- !u!1 &2473341461190471583
 GameObject:
   m_ObjectHideFlags: 0
