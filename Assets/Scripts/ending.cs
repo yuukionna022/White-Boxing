@@ -6,8 +6,11 @@ using UnityEngine;
 public class ending : MonoBehaviour
 {
 
-    public GameObject player;
-    public Keys good, bad, final;
+    public Collider player;
+    public Keys good, bad;
+    private Keys final;
+    public Collider barrier;
+    public GameObject rigidDoor, exitDoor;
 
     void OnTriggerEnter(Collider Col)
     {
@@ -22,9 +25,12 @@ public class ending : MonoBehaviour
         }
         
         
-        if (Col == player.GetComponent<CapsuleCollider>())
+        if (Col == player)
         {
             final.Ending();
+            barrier.enabled = false;
+            rigidDoor.SetActive(false);
+            exitDoor.SetActive(true);
         }
     }
 }

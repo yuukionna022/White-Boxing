@@ -32,7 +32,7 @@ public class LockDoor : MonoBehaviour
             //} 
             if(self.name == "third lock door" && conditions.getPuzzleTwo())
             {
-                room2.teleportRoom();
+                room2.teleportSecondTime();
             }
         }
     }

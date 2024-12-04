@@ -49,5 +49,5 @@ public class Keys : MonoBehaviour
         grabbed = false;
     }
 
-    public void Ending() { }
+    public virtual void Ending() { }
 }

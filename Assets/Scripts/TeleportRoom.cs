@@ -11,5 +11,10 @@ public class TeleportRoom : MonoBehaviour
         transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 
+    public void teleportSecondTime()
+    {
+        transform.position = new Vector3(101.77999877929688f, 3.539999485015869f, 3.4600000381469728f);
+    }
+
   
 }

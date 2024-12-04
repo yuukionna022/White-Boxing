@@ -23,7 +23,7 @@ public class BookGrabbable : MonoBehaviour
             Drop();
         }
         currentState = currentState.Process();
-        Debug.Log(currentState.name);
+        //Debug.Log(currentState.name);
 
     }
 
