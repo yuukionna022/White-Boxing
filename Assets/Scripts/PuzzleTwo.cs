@@ -17,7 +17,7 @@ public class PuzzleTwo : MonoBehaviour
     void Update()
     {
         
-        if (red.GetFulfilled() && green.GetFulfilled() && blue.GetFulfilled() && purple.GetFulfilled() && grey.GetFulfilled())
+        if (green.GetFulfilled() && blue.GetFulfilled() && purple.GetFulfilled())
         {
             conditions.setPuzzleTwo(true);
             //Debug.Log(red.GetFulfilled() && green.GetFulfilled() && blue.GetFulfilled() && purple.GetFulfilled() && grey.GetFulfilled());

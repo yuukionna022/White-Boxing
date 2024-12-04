@@ -13,6 +13,7 @@ TagManager:
   - Grey Book
   - Arrow
   - Key Highlight
+  - white walls
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - interactable
   - floor
   - Highlight
-  - 
+  - white wall
   - 
   - 
   - 
