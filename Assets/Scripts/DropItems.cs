@@ -8,15 +8,23 @@ public class DropItems : MonoBehaviour
   //  public GrabScript grabscript;
     public PuzzleConditions conditions;
     //[SerializeField] BookGrabbable script;
-    private bool collided = false;
+    protected bool collided = false;
 
     void OnTriggerEnter(Collider Col){ 
 
-        if(Col == player.GetComponent<Collider>() && conditions.getPuzzleOne()){
-            Debug.Log("drop");
+        if(Col == player.GetComponent<Collider>()){
+            // Debug.Log("drop");
             // grabscript.Drop();
             //script.Drop();
-            collided = true;
+            if (conditions.getState() == 1 && conditions.getPuzzleOne())
+            {
+                collided = true;
+            }
+            //else if (conditions.getState() == 2 && conditions.getPuzzleTwo())
+            //{
+            //    collided = true;
+            //}
+
         }
 
     }
