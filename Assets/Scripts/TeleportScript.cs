@@ -43,8 +43,8 @@ public class TeleportScript : MonoBehaviour
                 rigidDoor.SetActive(false);
                 grabbableDoor.SetActive(true);
                 barrier1.SetActive(false);
-                conditions.setState(2);
                 teleporting = false;
+                conditions.setState(2);                
             }
         }
     }
