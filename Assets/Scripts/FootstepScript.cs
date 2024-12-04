@@ -8,8 +8,8 @@ public class FootstepScript : MonoBehaviour
 
     public AudioSource footstepSource;
     public AudioClip[] footstepClips; //array of footstep clips
-    public float minPitch = 0.9f;
-    public float maxPitch = 1.1f;
+    public float minPitch = 0.3f;
+    public float maxPitch = 0.8f;
     public Vector2 thumbstickInput;
 
     void Start()
