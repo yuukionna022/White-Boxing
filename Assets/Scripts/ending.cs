@@ -15,12 +15,19 @@ public class ending : MonoBehaviour
     void OnTriggerEnter(Collider Col)
     {
 
+        if(final != null)
+        {
+            Debug.Log("final set");
+        }
+
         if (good.GetGrabbed())
         {
+            Debug.Log("good");
             final = good;
         }
         else if (bad.GetGrabbed()) 
         {
+            Debug.Log("bad");
             final = bad;
         }
         
@@ -28,6 +35,7 @@ public class ending : MonoBehaviour
         if (Col == player)
         {
             final.Ending();
+            Debug.Log("final door opened");
             barrier.enabled = false;
             rigidDoor.SetActive(false);
             exitDoor.SetActive(true);

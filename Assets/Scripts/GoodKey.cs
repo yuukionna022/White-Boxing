@@ -18,6 +18,7 @@ public class GoodKey : Keys
     public override void Ending()
     {
         ending.SetActive(true);
+        Debug.Log("Good ending");
     }
 
 

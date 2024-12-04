@@ -16,7 +16,7 @@ public class LockDoor : MonoBehaviour
         if(other == player.GetComponent<Collider>())
         {
 
-            if (!conditions.getPuzzleTwo() || self.name == "third lock door") { 
+            if (!conditions.getPuzzleTwo() || (self.name == "third lock door" && !conditions.getPuzzleThree())) { 
             knob1.GetComponent<XRGrabInteractable>().enabled = false;
             otherDoor.SetActive(false);
             rigidDoor.SetActive(true);
@@ -30,9 +30,10 @@ public class LockDoor : MonoBehaviour
             //   // self.SetActive(false);
                 
             //} 
-            if(self.name == "third lock door" && conditions.getPuzzleTwo())
+            if(self.name == "third lock door" && conditions.getPuzzleTwo() && !conditions.getPuzzleThree())
             {
                 room2.teleportSecondTime();
+                this.gameObject.SetActive(false);
             }
         }
     }

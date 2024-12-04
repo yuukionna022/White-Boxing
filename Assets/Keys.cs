@@ -9,6 +9,7 @@ public class Keys : MonoBehaviour
     protected bool grabbed;
     public Keys other;
     public GameObject ending;
+    public PuzzleConditions conditions;
 
     // Start is called before the first frame update
     protected void Start()
@@ -32,11 +33,13 @@ public class Keys : MonoBehaviour
     }
     protected void OnGrabbed(SelectEnterEventArgs args)
     {
+        conditions.setPuzzleThree(true);
         grabbed = true;
     }
 
     protected void OnReleased(SelectExitEventArgs args)
     {
+        conditions.setPuzzleThree(false);
         grabbed = false;
     }
 

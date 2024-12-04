@@ -7,6 +7,7 @@ public class PuzzleConditions : MonoBehaviour
 
     private bool puzzleOne = false;
     private bool puzzleTwo = false;
+    private bool puzzleThree = false;
     private int state = 0;
 
 
@@ -18,6 +19,11 @@ public class PuzzleConditions : MonoBehaviour
     public bool getPuzzleTwo()
     {
         return puzzleTwo;
+    }
+
+    public bool getPuzzleThree()
+    {
+        return puzzleThree;
     }
 
     public int getState()
@@ -35,6 +41,13 @@ public class PuzzleConditions : MonoBehaviour
     {
         puzzleTwo = condition;
     }
+
+    public void setPuzzleThree(bool condition)
+    {
+        puzzleThree = condition;
+    }
+
+
 
     public void setState(int x)
     {

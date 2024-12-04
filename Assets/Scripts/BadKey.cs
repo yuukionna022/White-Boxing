@@ -8,5 +8,6 @@ public class BadKey : Keys
   public override void Ending()
     {
         ending.SetActive(true);
+        Debug.Log("ending");
     }
 }
