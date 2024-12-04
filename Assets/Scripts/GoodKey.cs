@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoodKey : MonoBehaviour
+public class GoodKey : Keys
 {
-    // Start is called before the first frame update
-    void Start()
+
+    protected override void Update()
     {
-        
+        base.Update();
+
+        if (grabbed)
+        {
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Ending()
     {
-        
+        ending.SetActive(true);
     }
+
+
 }

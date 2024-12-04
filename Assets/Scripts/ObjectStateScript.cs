@@ -56,13 +56,13 @@ public class ObjectStateScript
     protected void OnGrabbed(SelectEnterEventArgs args)
     {
         grabbed = true;
-        Debug.Log(grabbed);
+       // Debug.Log(grabbed);
     }
 
     protected void OnReleased(SelectExitEventArgs args)
     {
         grabbed = false;
-        Debug.Log(grabbed);
+      //  Debug.Log(grabbed);
     }
 
     public bool Dropped()

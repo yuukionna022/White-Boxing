@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class ending : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public GameObject player;
+    public Keys good, bad, final;
+
+    void OnTriggerEnter(Collider Col)
     {
+
+        if (good.GetGrabbed())
+        {
+            final = good;
+        }
+        else if (bad.GetGrabbed()) 
+        {
+            final = bad;
+        }
         
+        
+        if (Col == player.GetComponent<CapsuleCollider>())
+        {
+            final.Ending();
+        }
     }
 }
