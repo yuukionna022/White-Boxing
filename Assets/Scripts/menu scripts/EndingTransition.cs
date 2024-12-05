@@ -14,7 +14,7 @@ public class EndingTransition : MonoBehaviour
         if (other == player)
         {
             transition.fadeTransition();
-            teleport.teleportPlayerBack();
+            teleport.teleportPlayer();
 
         }
     }
