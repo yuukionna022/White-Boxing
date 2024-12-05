@@ -31,10 +31,11 @@ public class Keys : MonoBehaviour
         }
         else
         {
-            //conditions.setPuzzleThree(false);
-            //other.gameObject.SetActive(true);
-            if (!conditions.getPuzzleThree())
-            {
+            if (!other.GetGrabbed()) { 
+                conditions.setPuzzleThree(false); 
+                //other.gameObject.SetActive(true);
+                //if (!conditions.getPuzzleThree())
+                //{
                 other.GetComponent<XRGrabInteractable>().enabled = true;
             }
         }
