@@ -11,7 +11,7 @@ public class ending : MonoBehaviour
     public Keys good, bad;
     private Keys final;
     public Collider barrier;
-    public GameObject rigidDoor, exitDoor;
+    public GameObject rigidDoor, exitDoor, goodKey, badKey, raycastL, raycastR;
     public PuzzleConditions conditions;
     private bool drop = false;
 
@@ -39,10 +39,12 @@ public class ending : MonoBehaviour
             barrier.enabled = false;
             rigidDoor.SetActive(false);
             exitDoor.SetActive(true);
-            good.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
-            bad.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
-            good.gameObject.GetComponent<Renderer>().enabled = false;
-            bad.gameObject.GetComponent<Renderer>().enabled = false;
+            goodKey.GetComponent<XRGrabInteractable>().enabled = false;
+            badKey.GetComponent<XRGrabInteractable>().enabled = false;
+            goodKey.GetComponent<MeshRenderer>().enabled = false;
+            badKey.GetComponent<MeshRenderer>().enabled = false;
+           // raycastL.GetComponent<XRInteractorLineVisual>().enabled = false;
+            //raycastR.GetComponent<XRInteractorLineVisual>().enabled = false;
             drop = true;
         }
     }

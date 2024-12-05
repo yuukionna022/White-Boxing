@@ -7618,7 +7618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7853,7 +7853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &377687666
 Transform:
   m_ObjectHideFlags: 0
@@ -15282,6 +15282,10 @@ MonoBehaviour:
   barrier: {fileID: 2062730244}
   rigidDoor: {fileID: 192555008}
   exitDoor: {fileID: 1859654222}
+  goodKey: {fileID: 363196524}
+  badKey: {fileID: 648531808}
+  raycastL: {fileID: 584030267}
+  raycastR: {fileID: 1593342756}
   conditions: {fileID: 544969334}
 --- !u!65 &781964119
 BoxCollider:
@@ -25484,7 +25488,7 @@ Transform:
   m_GameObject: {fileID: 1261541768}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.1765213, y: -1.2529998, z: -8.271534}
+  m_LocalPosition: {x: -0.1765213, y: -1.2529998, z: -2.426}
   m_LocalScale: {x: 0.12053, y: 7.51958, z: 8.336929}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30363,11 +30367,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4899295715442207386, guid: 598a7a568c6d40f4d92e6415fcec387f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.749
+      value: -3.748
       objectReference: {fileID: 0}
     - target: {fileID: 4899295715442207386, guid: 598a7a568c6d40f4d92e6415fcec387f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.949
+      value: -2.025
       objectReference: {fileID: 0}
     - target: {fileID: 4899295715442207386, guid: 598a7a568c6d40f4d92e6415fcec387f, type: 3}
       propertyPath: m_LocalRotation.w
