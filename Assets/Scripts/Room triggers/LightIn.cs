@@ -12,6 +12,9 @@ public class LightIn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
+        Debug.Log(other);
+        
         if (other == door)
         {
 

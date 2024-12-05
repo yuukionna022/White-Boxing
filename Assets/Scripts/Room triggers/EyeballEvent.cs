@@ -35,7 +35,7 @@ public class EyeballEvent : MonoBehaviour
             //Debug.Log(counter);
         } else
         {
-            if (counter > 1.5)
+            if (counter > 1.2)
             {
                 seen = true;
             }
