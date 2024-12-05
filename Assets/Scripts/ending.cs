@@ -11,34 +11,39 @@ public class ending : MonoBehaviour
     private Keys final;
     public Collider barrier;
     public GameObject rigidDoor, exitDoor;
+    public PuzzleConditions conditions;
 
     void OnTriggerEnter(Collider Col)
     {
 
-        if(final != null)
+        
+        
+        if (Col == player && conditions.getPuzzleThree())
         {
-            Debug.Log("final set");
-        }
 
-        if (good.GetGrabbed())
-        {
-            Debug.Log("good");
-            final = good;
-        }
-        else if (bad.GetGrabbed()) 
-        {
-            Debug.Log("bad");
-            final = bad;
-        }
-        
-        
-        if (Col == player)
-        {
+            if (final != null)
+            {
+                Debug.Log("final set");
+            }
+
+            if (good.GetGrabbed())
+            {
+                Debug.Log("good");
+                final = good;
+            }
+            else if (bad.GetGrabbed())
+            {
+                Debug.Log("bad");
+                final = bad;
+            }
+
             final.Ending();
             Debug.Log("final door opened");
             barrier.enabled = false;
             rigidDoor.SetActive(false);
             exitDoor.SetActive(true);
+           // good.gameObject.SetActive(false);
+           // bad.gameObject.SetActive(false);
         }
     }
 }

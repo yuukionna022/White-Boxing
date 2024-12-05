@@ -24,22 +24,26 @@ public class Keys : MonoBehaviour
         if (grabbed)
         {
             other.SetGrabbed();
-            other.gameObject.SetActive(false);
+            conditions.setPuzzleThree(true);
+            //other.gameObject.SetActive(false);
+            other.GetComponent<XRGrabInteractable>().enabled = false;
         }
-        else
+        else 
         {
-            other.gameObject.SetActive(true);
+            //conditions.setPuzzleThree(false);
+            //other.gameObject.SetActive(true);
+            other.GetComponent<XRGrabInteractable>().enabled = true;
         }
     }
     protected void OnGrabbed(SelectEnterEventArgs args)
     {
-        conditions.setPuzzleThree(true);
+        
         grabbed = true;
     }
 
     protected void OnReleased(SelectExitEventArgs args)
     {
-        conditions.setPuzzleThree(false);
+       
         grabbed = false;
     }
 
@@ -52,5 +56,8 @@ public class Keys : MonoBehaviour
         grabbed = false;
     }
 
-    public virtual void Ending() { }
+    public virtual void Ending() {
+
+        conditions.setState(3);
+    }
 }
