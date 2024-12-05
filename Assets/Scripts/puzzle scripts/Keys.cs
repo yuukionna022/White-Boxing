@@ -21,6 +21,7 @@ public class Keys : MonoBehaviour
     // Update is called once per frame
    protected virtual void Update()
     {
+       
         if (grabbed)
         {
             other.SetGrabbed();
@@ -28,12 +29,16 @@ public class Keys : MonoBehaviour
             //other.gameObject.SetActive(false);
             other.GetComponent<XRGrabInteractable>().enabled = false;
         }
-        else 
+        else
         {
             //conditions.setPuzzleThree(false);
             //other.gameObject.SetActive(true);
-            other.GetComponent<XRGrabInteractable>().enabled = true;
+            if (!conditions.getPuzzleThree())
+            {
+                other.GetComponent<XRGrabInteractable>().enabled = true;
+            }
         }
+        
     }
     protected void OnGrabbed(SelectEnterEventArgs args)
     {

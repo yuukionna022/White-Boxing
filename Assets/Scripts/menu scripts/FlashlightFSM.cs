@@ -22,16 +22,14 @@ public class FlashlightFSM
     protected PuzzleConditions conditions;
     protected Collider playerCol;
     protected bool grabbed;
-    protected ending ending;
 
-    public FlashlightFSM(GameObject player, GameObject flashlight, ending end)
+    public FlashlightFSM(GameObject player, GameObject flashlight, Collider playerCol)
     {
         this.player = player;
         self = flashlight;
-        playerCol = player.GetComponent<Collider>();
+        this.playerCol = playerCol;
         conditions = player.GetComponent<PuzzleConditions>();
         grabbed = false;
-        ending = end;
         self.GetComponent<XRGrabInteractable>().selectEntered.AddListener(OnGrabbed);
         self.GetComponent<XRGrabInteractable>().selectExited.AddListener(OnReleased);
         stage = EVENT.ENTER;
@@ -56,7 +54,6 @@ public class FlashlightFSM
     protected void OnGrabbed(SelectEnterEventArgs args)
     {
         grabbed = true;
-        //Debug.Log(grabbed);
     }
 
     protected void OnReleased(SelectExitEventArgs args)
@@ -69,7 +66,7 @@ public class FlashlightFSM
 
 public class Holding : FlashlightFSM
 {
-    public Holding(GameObject player, GameObject flashlight, ending end) : base(player, flashlight, end)
+    public Holding(GameObject player, GameObject flashlight, Collider playerCol) : base(player, flashlight, playerCol)
     {
         name = STATE.HOLDING;
     }
@@ -84,16 +81,9 @@ public class Holding : FlashlightFSM
     public override void Update()
     {
 
-        if (ending.Drop())
+        if (!grabbed)
         {
-            Debug.Log("drop");
-            self.GetComponent<XRGrabInteractable>().enabled = false;
-            self.SetActive(false);
-        }
-
-        else if (!grabbed)
-        {
-            nextState = new Drop(player, self, ending);
+            nextState = new Drop(player, self, playerCol);
             stage = EVENT.EXIT;
         }
 
@@ -111,7 +101,7 @@ public class Teleporting : FlashlightFSM
     protected Vector3 position;
     protected Quaternion rotation;
 
-    public Teleporting(GameObject player, GameObject flashlight, Vector3 position, Quaternion rotation, ending end) : base(player, flashlight, end)
+    public Teleporting(GameObject player, GameObject flashlight, Vector3 position, Quaternion rotation, Collider playerCol) : base(player, flashlight, playerCol)
     {
         this.position = position;
         this.rotation = rotation;
@@ -128,11 +118,13 @@ public class Teleporting : FlashlightFSM
     public override void Update()
     {
 
-        self.transform.position = position;
-        self.transform.rotation = rotation;
-        nextState = new Drop(player, self, ending);
+        if ((self.transform.position - position).magnitude > 0.2) {
+            self.transform.position = position;
+            self.transform.rotation = rotation;
+        }
+        nextState = new Drop(player, self, playerCol);
         stage = EVENT.EXIT;
-        
+    
     }
 
     public override void Exit()
@@ -143,7 +135,7 @@ public class Teleporting : FlashlightFSM
 
 public class Drop : FlashlightFSM
 {
-    public Drop(GameObject player, GameObject flashlight, ending end) : base(player, flashlight, end)
+    public Drop(GameObject player, GameObject flashlight, Collider playerCol) : base(player, flashlight, playerCol)
     {
         name = STATE.DROPPED;
     }
@@ -160,11 +152,11 @@ public class Drop : FlashlightFSM
 
         if (grabbed)
         {
-            nextState = new Holding(player, self, ending);
+            nextState = new Holding(player, self, playerCol);
             stage = EVENT.EXIT;
         }
         
-        if ((self.transform.position - player.transform.position).magnitude > 3f)
+        if ((self.transform.position - playerCol.transform.position).magnitude > 3f)
         {
             var newPos = self.transform.position;
             var newRot = self.transform.rotation;
@@ -187,7 +179,7 @@ public class Drop : FlashlightFSM
             }
 
 
-            nextState = new Teleporting(player, self, newPos, newRot, ending);
+            nextState = new Teleporting(player, self, newPos, newRot, playerCol);
             stage = EVENT.EXIT;
         }
     }

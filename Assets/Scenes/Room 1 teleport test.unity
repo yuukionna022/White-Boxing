@@ -21784,6 +21784,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6457828882042997209, guid: 0ffcacab6b154fd4ea4cea3351b6bf9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1064257905}
+    - targetCorrespondingSourceObject: {fileID: 6457828882042997209, guid: 0ffcacab6b154fd4ea4cea3351b6bf9e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1064257906}
+    - targetCorrespondingSourceObject: {fileID: 6457828882042997209, guid: 0ffcacab6b154fd4ea4cea3351b6bf9e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1064257907}
     - targetCorrespondingSourceObject: {fileID: 4140682153109520905, guid: 0ffcacab6b154fd4ea4cea3351b6bf9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1863166630}
@@ -38381,6 +38387,7 @@ MonoBehaviour:
   player: {fileID: 544969323}
   self: {fileID: 1679421510}
   end: {fileID: 781964118}
+  playerCol: {fileID: 1665777676}
 --- !u!114 &1679421515
 MonoBehaviour:
   m_ObjectHideFlags: 0

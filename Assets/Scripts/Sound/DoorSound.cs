@@ -25,7 +25,7 @@ public class DoorSound : MonoBehaviour
 
     void Update()
     {
-         Debug.Log("Hinge Angle: " + hinge.angle);
+         //Debug.Log("Hinge Angle: " + hinge.angle);
         float currentAngle = hinge.angle;
 
         if (currentAngle <= openThreshold && !hasPlayedOpenSound)

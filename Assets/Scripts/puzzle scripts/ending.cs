@@ -35,14 +35,16 @@ public class ending : MonoBehaviour
             }
 
             final.Ending();
-            Debug.Log("final door opened");
+            //Debug.Log("final door opened");
             barrier.enabled = false;
             rigidDoor.SetActive(false);
             exitDoor.SetActive(true);
-            goodKey.GetComponent<XRGrabInteractable>().enabled = false;
-            badKey.GetComponent<XRGrabInteractable>().enabled = false;
-            goodKey.GetComponent<MeshRenderer>().enabled = false;
-            badKey.GetComponent<MeshRenderer>().enabled = false;
+            goodKey.SetActive(false);
+            badKey.SetActive(false);
+            //goodKey.GetComponent<XRGrabInteractable>().enabled = false;
+            //badKey.GetComponent<XRGrabInteractable>().enabled = false;
+            //goodKey.GetComponent<MeshRenderer>().enabled = false;
+            //badKey.GetComponent<MeshRenderer>().enabled = false;
            // raycastL.GetComponent<XRInteractorLineVisual>().enabled = false;
             //raycastR.GetComponent<XRInteractorLineVisual>().enabled = false;
             drop = true;

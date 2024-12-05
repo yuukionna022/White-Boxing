@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine;
 
 public class Flashlight : MonoBehaviour
@@ -12,18 +13,26 @@ public class Flashlight : MonoBehaviour
     private FlashlightFSM state;
     public GameObject player, self;
     public ending end;
+    public Collider playerCol;
 
     void Start()
     {
         _light = GetComponentInChildren<Light>();
         _audioSource = GetComponent<AudioSource>();
         hasPickedUp = false;
-        state = new Drop(player, self, end);
+        state = new Drop(player, self, playerCol);
     }
 
     void Update()
     {
         state = state.Process();
+        if (end.Drop())
+        {
+            //Debug.Log("drop flashlight");
+            self.GetComponent<XRGrabInteractable>().enabled = false;
+            self.SetActive(false);
+        }
+
     }
 
     public void LightOn()
