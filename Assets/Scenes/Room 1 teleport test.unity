@@ -7853,7 +7853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &377687666
 Transform:
   m_ObjectHideFlags: 0
@@ -25890,6 +25890,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8787217328934685939, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
+      propertyPath: m_Limits.max
+      value: 0.2541161
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787217328934685939, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
+      propertyPath: m_Limits.min
+      value: -108.0778
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787217328934685939, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 1870631667}
@@ -41787,6 +41795,14 @@ PrefabInstance:
     - target: {fileID: 5253529443781777097, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787217328934685939, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
+      propertyPath: m_Limits.max
+      value: 0.2541161
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787217328934685939, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
+      propertyPath: m_Limits.min
+      value: -108.0778
       objectReference: {fileID: 0}
     - target: {fileID: 8787217328934685939, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
       propertyPath: m_ConnectedAnchor.x
