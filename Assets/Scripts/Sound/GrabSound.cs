@@ -5,10 +5,13 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GrabSound : MonoBehaviour
 {
-    public AudioClip pickupSound;
+    public AudioClip[] pickupSounds;
     public AudioSource audioSource;
     public XRGrabInteractable grabInteractable;
     private bool wasGrabbed = false;
+
+    public float minPitch = 0.7f;
+    public float maxPitch = 0.9f;
 
     void Start()
     {
@@ -34,9 +37,12 @@ public class GrabSound : MonoBehaviour
 
     void playSound()
     {
-        if (pickupSound != null)
-        {
-            audioSource.PlayOneShot(pickupSound);
-        }
+        audioSource.pitch = Random.Range(minPitch, maxPitch);
+
+        int randomIndex = Random.Range(0, pickupSounds.Length);
+        AudioClip randomClip = pickupSounds[randomIndex];
+
+        audioSource.PlayOneShot(randomClip);
+
     }
 }
