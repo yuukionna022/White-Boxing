@@ -10,6 +10,7 @@ public class TeleportTransition : MonoBehaviour
     public bool triggerTransition;
     private float slider;
     private bool unfade;
+    public bool isWhite;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,13 @@ public class TeleportTransition : MonoBehaviour
             if (unfade == false)
             {
                 slider += Time.deltaTime / transitionTime;
-                panel.color = new UnityEngine.Color(panel.color.r, panel.color.g, panel.color.b, slider);
+                if (isWhite)
+                {
+                    panel.color = new UnityEngine.Color(255, 255, 255, slider);
+                }
+                else {
+                    panel.color = new UnityEngine.Color(panel.color.r, panel.color.g, panel.color.b, slider);
+                }
             }
             //Transition unfades from black (with a delay of when 1.0f < panel.color.a < 2.0f)
             if (panel.color.a >= 2.0f)
@@ -38,7 +45,14 @@ public class TeleportTransition : MonoBehaviour
             if (unfade == true)
             {
                 slider -= Time.deltaTime / transitionTime;
-                panel.color = new UnityEngine.Color(panel.color.r, panel.color.g, panel.color.b, slider);
+                if (isWhite)
+                {
+                    panel.color = new UnityEngine.Color(255, 255, 255, slider);
+                }
+                else
+                {
+                    panel.color = new UnityEngine.Color(panel.color.r, panel.color.g, panel.color.b, slider);
+                }
             }
             //Transition Finishes
             if (panel.color.a <= 0f)
