@@ -8,33 +8,49 @@ public class TeleportPlayer : MonoBehaviour
     public GameObject storePosition;
     //public Vector3 destination;
     public GameObject destinationObject;
+    public float transitionTime;
+    private float slider;
+    private bool teleportingPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        //UnityEditor.TransformWorldPlacementJSON:{ "position":{ "x":-33.35050582885742,"y":0.7750000953674316,"z":-13.514934539794922},"rotation":{ "x":0.0,"y":0.0,"z":0.0,"w":1.0},"scale":{ "x":1.0,"y":1.0,"z":1.0} }
-        //-33.35050582885742,"y":0.7750000953674316,"z":-13.514934539794922
-        //UnityEditor.TransformWorldPlacementJSON:{ "position":{ "x":103.74949645996094,"y":0.7750000953674316,"z":23.355064392089845},"rotation":{ "x":0.0,"y":0.0,"z":0.0,"w":1.0},"scale":{ "x":1.0,"y":1.0,"z":1.0} }
-        
-
+        slider = 0;
+        teleportingPlayer = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (teleportingPlayer == true)
+        {
+            Debug.Log("teleport Player");
+            slider += Time.deltaTime / transitionTime;
+            if (slider >= 0.5)
+            {
+                //store the player position
+                storePosition.transform.position = player.transform.position;
+                //teleport the player
+                player.transform.position = destinationObject.transform.position;
+
+                teleportingPlayer = false;
+            }
+        }
+        else
+        {
+            slider = 0;
+        }
     }
 
     public void teleportPlayer()
     {
-        Debug.Log("teleport Player");
-        //store the player position
-        storePosition.transform.position = player.transform.position;
-        //teleport the player
-        player.transform.position = destinationObject.transform.position;
+        teleportingPlayer = true;
     }
     public void teleportPlayerBack()
     {
-        player.transform.position = storePosition.transform.position;
-
+        slider += Time.deltaTime / transitionTime;
+        if (slider >= 2)
+        {
+            player.transform.position = storePosition.transform.position;
+        }
     }
 }
