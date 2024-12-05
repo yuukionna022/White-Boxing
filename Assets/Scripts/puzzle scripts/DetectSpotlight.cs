@@ -65,7 +65,9 @@ public class DetectSpotlight : MonoBehaviour
 
             if (other.name == "Glow Emitter")
             {
-                other.GetComponent<ParticleSystem>().maxParticles = 4;
+                var emitter = other.GetComponent<ParticleSystem>();
+                var main = emitter.main;
+                main.maxParticles = 4;
             }
         }
     }
@@ -115,19 +117,11 @@ public class DetectSpotlight : MonoBehaviour
 
             if (other.name == "Glow Emitter")
             {
-                other.GetComponent<ParticleSystem>().maxParticles = 0;
+                var emitter = other.GetComponent<ParticleSystem>();
+                var main = emitter.main;
+                main.maxParticles = 0;
             }
         }
-
-        //private void OnCollisionEnter(Collision collision)
-        //{
-        //    Debug.Log("detect collision 2");
-        //    if (collision.gameObject.tag == "Highlight" || collision.gameObject.layer == 10)
-        //    {
-        //        Debug.Log("hit 2");
-        //        //collision.gameObject. = visibleMaterial;
-
-        //    }
-        //}
+                
     }
 }

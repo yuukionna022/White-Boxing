@@ -8,7 +8,7 @@ public class DoorSound : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip openSound;
     public AudioClip closeSound;
-    private float previousAngle = 0f;
+    //private float previousAngle = 0f;
     public float openThreshold = -30f;
     public float closeThreshold = -1f;
     private bool hasPlayedOpenSound = false;
