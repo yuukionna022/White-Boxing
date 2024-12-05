@@ -9,9 +9,12 @@ public class DropItems : MonoBehaviour
     public PuzzleConditions conditions;
     //[SerializeField] BookGrabbable script;
     protected bool collided = false;
+    public AudioSource audioSource;
+    public AudioClip unlockSound;
 
-    void OnTriggerEnter(Collider Col){ 
 
+    void OnTriggerEnter(Collider Col)
+    { 
         if(Col == player.GetComponent<Collider>()){
             // Debug.Log("drop");
             // grabscript.Drop();
@@ -19,6 +22,7 @@ public class DropItems : MonoBehaviour
             if (conditions.getState() == 1 && conditions.getPuzzleOne())
             {
                 collided = true;
+                audioSource.PlayOneShot(unlockSound);
             }
             //else if (conditions.getState() == 2 && conditions.getPuzzleTwo())
             //{

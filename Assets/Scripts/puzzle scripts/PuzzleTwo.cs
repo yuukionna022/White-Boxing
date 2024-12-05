@@ -6,10 +6,14 @@ public class PuzzleTwo : MonoBehaviour
 {
     public ShelfCollider red, green, blue, purple, grey;
     public PuzzleConditions conditions;
+    public AudioSource audioSource;
+    public AudioClip unlockSound;
+    private bool playedSound;
     
     // Start is called before the first frame update
     void Start()
     {
+        playedSound = false;
         
     }
 
@@ -20,6 +24,12 @@ public class PuzzleTwo : MonoBehaviour
         if (green.GetFulfilled() && blue.GetFulfilled() && purple.GetFulfilled())
         {
             conditions.setPuzzleTwo(true);
+
+            if(!playedSound){
+                audioSource.PlayOneShot(unlockSound);
+                playedSound = true;
+            }
+            
             //Debug.Log(red.GetFulfilled() && green.GetFulfilled() && blue.GetFulfilled() && purple.GetFulfilled() && grey.GetFulfilled());
             //Debug.Log(conditions.getPuzzleTwo());
         }
