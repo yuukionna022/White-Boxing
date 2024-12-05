@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ending : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class ending : MonoBehaviour
     public Collider barrier;
     public GameObject rigidDoor, exitDoor;
     public PuzzleConditions conditions;
+    private bool drop = false;
 
     void OnTriggerEnter(Collider Col)
     {
@@ -21,19 +23,14 @@ public class ending : MonoBehaviour
         if (Col == player && conditions.getPuzzleThree())
         {
 
-            if (final != null)
-            {
-                Debug.Log("final set");
-            }
-
             if (good.GetGrabbed())
             {
-                Debug.Log("good");
+                //Debug.Log("good");
                 final = good;
             }
             else if (bad.GetGrabbed())
             {
-                Debug.Log("bad");
+                //Debug.Log("bad");
                 final = bad;
             }
 
@@ -42,8 +39,16 @@ public class ending : MonoBehaviour
             barrier.enabled = false;
             rigidDoor.SetActive(false);
             exitDoor.SetActive(true);
-           // good.gameObject.SetActive(false);
-           // bad.gameObject.SetActive(false);
+            good.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
+            bad.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
+            good.gameObject.GetComponent<Renderer>().enabled = false;
+            bad.gameObject.GetComponent<Renderer>().enabled = false;
+            drop = true;
         }
+    }
+
+    public bool Drop()
+    {
+        return drop;
     }
 }

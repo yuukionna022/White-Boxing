@@ -35345,7 +35345,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 2176
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -37776,6 +37776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conditions: {fileID: 544969334}
   player: {fileID: 1665777673}
+  ending: {fileID: 781964118}
 --- !u!1 &1680833093
 GameObject:
   m_ObjectHideFlags: 0

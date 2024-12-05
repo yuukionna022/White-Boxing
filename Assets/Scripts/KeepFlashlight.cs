@@ -9,6 +9,7 @@ public class KeepFlashlight : MonoBehaviour
     public PuzzleConditions conditions;
     public GameObject player;
     private bool grabbed = false;
+    public ending ending;
     
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,12 @@ public class KeepFlashlight : MonoBehaviour
                 transform.position = new Vector3(57.269493103027347f, 0.4528012275695801f, 9.974485397338868f);
                 transform.rotation = new Quaternion(-0.6630071401596069f, -0.4478180706501007f, -0.3366601765155792f, 0.4965285062789917f);
             }
+        }
+
+        if (ending.Drop())
+        {
+            gameObject.GetComponent<XRGrabInteractable>().enabled = false;
+            gameObject.SetActive(false);
         }
     }
 
