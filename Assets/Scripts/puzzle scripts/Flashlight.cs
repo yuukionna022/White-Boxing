@@ -9,13 +9,23 @@ public class Flashlight : MonoBehaviour
     private Light _light;
     private AudioSource _audioSource;
     public bool hasPickedUp;
+    private FlashlightFSM state;
+    public GameObject player, self;
+    public ending end;
 
     void Start()
     {
         _light = GetComponentInChildren<Light>();
         _audioSource = GetComponent<AudioSource>();
         hasPickedUp = false;
+        state = new Drop(player, self, end);
     }
+
+    void Update()
+    {
+        state = state.Process();
+    }
+
     public void LightOn()
     {
         _audioSource.Play();

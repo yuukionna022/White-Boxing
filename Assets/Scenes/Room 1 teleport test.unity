@@ -7756,7 +7756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21784,12 +21784,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6457828882042997209, guid: 0ffcacab6b154fd4ea4cea3351b6bf9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1064257905}
-    - targetCorrespondingSourceObject: {fileID: 6457828882042997209, guid: 0ffcacab6b154fd4ea4cea3351b6bf9e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1064257907}
-    - targetCorrespondingSourceObject: {fileID: 6457828882042997209, guid: 0ffcacab6b154fd4ea4cea3351b6bf9e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1064257906}
     - targetCorrespondingSourceObject: {fileID: 4140682153109520905, guid: 0ffcacab6b154fd4ea4cea3351b6bf9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1863166630}
@@ -26443,6 +26437,14 @@ PrefabInstance:
     - target: {fileID: 5469884821706836870, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
       propertyPath: m_AttachTransform
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508015406848953563, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508015406848953563, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8787217328934685939, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
       propertyPath: m_Limits.max
@@ -38376,6 +38378,9 @@ MonoBehaviour:
   lens: {fileID: 2100000, guid: b60973752a0f53043a17cbeace901086, type: 2}
   glowEmitter: {fileID: 497329856}
   hasPickedUp: 0
+  player: {fileID: 544969323}
+  self: {fileID: 1679421510}
+  end: {fileID: 781964118}
 --- !u!114 &1679421515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38587,7 +38592,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679421510}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad17c2b792832214c8b2f49f6d9c8384, type: 3}
   m_Name: 
@@ -42396,6 +42401,18 @@ PrefabInstance:
     - target: {fileID: 5253529443781777097, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5469884821706836870, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508015406848953563, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508015406848953563, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8787217328934685939, guid: b6d85c32a59af9c45a1a19fe42529180, type: 3}
       propertyPath: m_Limits.max
