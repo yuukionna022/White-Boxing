@@ -268,7 +268,7 @@ MonoBehaviour:
   hinge: {fileID: 8787217328934685939}
   audioSource: {fileID: 1472828519026514691}
   openSound: {fileID: 8300000, guid: ebf0dfd95ea8fcf4490688ba1522e9e9, type: 3}
-  closeSound: {fileID: 8300000, guid: 3aee3df96ce5de544a66232aa564c755, type: 3}
+  closeSound: {fileID: 8300000, guid: 4bf24392eb0080c46be92564aaf4d7c6, type: 3}
   openThreshold: -15
   closeThreshold: -1
 --- !u!164 &4397940787002613945

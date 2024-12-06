@@ -14,6 +14,8 @@ public class ending : MonoBehaviour
     public GameObject rigidDoor, exitDoor, goodKey, badKey, raycastL, raycastR;
     public PuzzleConditions conditions;
     private bool drop = false;
+    public AudioSource audioSource;
+    public AudioClip unlockSound;
 
     void OnTriggerEnter(Collider Col)
     {
@@ -33,6 +35,8 @@ public class ending : MonoBehaviour
                 //Debug.Log("bad");
                 final = bad;
             }
+            //Play unlock sound
+            audioSource.PlayOneShot(unlockSound);
 
             final.Ending();
             //Debug.Log("final door opened");
