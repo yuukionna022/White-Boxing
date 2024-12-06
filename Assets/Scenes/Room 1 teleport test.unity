@@ -45715,6 +45715,8 @@ MonoBehaviour:
   self: {fileID: 1679421510}
   end: {fileID: 781964118}
   playerCol: {fileID: 1665777676}
+  batteryLife: 300
+  flickerProbability: 20
 --- !u!114 &1679421515
 MonoBehaviour:
   m_ObjectHideFlags: 0

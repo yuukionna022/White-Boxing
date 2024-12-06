@@ -15,12 +15,33 @@ public class Flashlight : MonoBehaviour
     public ending end;
     public Collider playerCol;
 
+    private bool batteryOn;
+    public float batteryLife;
+    public int flickerProbability;
+    private bool isFlickering;
+    private bool isChecking;
+    private bool triggerOnce;
+    private float timeBeforeNextCheck;
+    private float flickerTime;
+    private int gen;
+    private float tempLightIntensity;
+
     void Start()
     {
         _light = GetComponentInChildren<Light>();
         _audioSource = GetComponent<AudioSource>();
         hasPickedUp = false;
         state = new Drop(player, self, playerCol);
+        batteryOn = false;
+
+
+        isFlickering = false;
+        isChecking = true;
+        triggerOnce = false;
+        timeBeforeNextCheck = 0;
+        flickerTime = 0.1f;
+        gen = 0;
+        tempLightIntensity = 0;
     }
 
     void Update()
@@ -33,6 +54,62 @@ public class Flashlight : MonoBehaviour
             self.SetActive(false);
         }
 
+        if (batteryOn)
+        {
+            //Run down timer for battery life
+            Debug.Log("light intensity: " + _light.intensity);
+            _light.intensity -= Time.deltaTime / batteryLife;
+        }
+        if (_light.intensity < 0.7 && _light.intensity > 0.3)
+        {
+            //Minor light flicker
+            if (isChecking)
+            {
+                if (_light.intensity < 0.3)
+                {
+                    //More intense light flicker
+                    timeBeforeNextCheck = Random.Range(1, 1);
+                }
+                else
+                {
+                    timeBeforeNextCheck = Random.Range(1, 3);
+                }
+                isChecking = false;
+                gen = Random.Range(1, 100);
+                if (gen <= flickerProbability && isFlickering == false)
+                {
+                    isFlickering = true;
+                }
+            }
+            if (!isChecking && !isFlickering)
+            {
+                //Light will be on
+                timeBeforeNextCheck -= Time.deltaTime;
+                if (timeBeforeNextCheck < 0)
+                {
+                    isChecking = true;
+                }
+            }
+            if (isFlickering)
+            {
+                flickerTime -= Time.deltaTime;
+                if (!triggerOnce)
+                {
+                    tempLightIntensity = _light.intensity;
+                    _light.intensity = 0;
+                    triggerOnce = true;
+                }
+                if (flickerTime < 0)
+                {
+                    flickerTime = 0.1f;
+                    isFlickering = false;
+                    isChecking = true;
+                    triggerOnce = false;
+                    _light.intensity = tempLightIntensity;
+                }
+            }
+        }
+
     }
 
     public void LightOn()
@@ -43,6 +120,7 @@ public class Flashlight : MonoBehaviour
         hasPickedUp = true;
         var main = glowEmitter.main;
         main.maxParticles = 0;
+        batteryOn = true;
     }
 
     public void LightOff()
@@ -52,6 +130,7 @@ public class Flashlight : MonoBehaviour
         _light.enabled = false;
         var main = glowEmitter.main;
         main.maxParticles = 4;
+        batteryOn = false;
     }
     public bool FlashlightPickedUp()
     {
