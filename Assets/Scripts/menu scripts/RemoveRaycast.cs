@@ -13,7 +13,7 @@ public class RemoveRaycast : MonoBehaviour
        
         if (other == player)
         {
-            UnityEngine.Debug.Log("removing");
+           // UnityEngine.Debug.Log("removing");
             raycastL.GetComponent<XRInteractorLineVisual>().enabled = false;
             raycastR.GetComponent<XRInteractorLineVisual>().enabled = false;
         }

@@ -39,6 +39,6 @@ public class BookGrabbable : MonoBehaviour
 
     public bool Grabbed()
     {
-        return (currentState.Grabbed()&&currentState.isGrabbed);
+        return (currentState.Grabbed());
     }
 }

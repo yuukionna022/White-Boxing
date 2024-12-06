@@ -28,7 +28,7 @@ public class wardrobe : MonoBehaviour
 
         if (other == playerCollider)
         {
-            UnityEngine.Debug.Log("player in wardrobe");
+           // UnityEngine.Debug.Log("player in wardrobe");
             state.SetEntered(true);
         }
     }
@@ -38,7 +38,7 @@ public class wardrobe : MonoBehaviour
 
         if (other == playerCollider)
         {
-            UnityEngine.Debug.Log("player left wardrobe");
+           // UnityEngine.Debug.Log("player left wardrobe");
             state.SetEntered(false);
         }
     }

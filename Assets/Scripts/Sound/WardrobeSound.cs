@@ -17,7 +17,7 @@ public class WardrobeSound : MonoBehaviour
 
         if (leftHinge == null || rightHinge == null)
         {
-            Debug.LogError("Both hinges must be assigned!");
+           // Debug.LogError("Both hinges must be assigned!");
             return;
         }
 
@@ -37,18 +37,18 @@ public class WardrobeSound : MonoBehaviour
         float currentLeftAngle = leftHinge.angle;
         float currentRightAngle = rightHinge.angle;
 
-        Debug.Log($"loggCurrent Left Angle: {currentLeftAngle}, Current Right Angle: {currentRightAngle}");
+       // Debug.Log($"loggCurrent Left Angle: {currentLeftAngle}, Current Right Angle: {currentRightAngle}");
 
 
         bool isLeftHingeMoving = Mathf.Abs(currentLeftAngle - previousLeftAngle) > 0.2f;
         bool isRightHingeMoving = Mathf.Abs(currentRightAngle - previousRightAngle) > 0.2f;
 
-        Debug.Log($"loggLeft Hinge Moving: {isLeftHingeMoving}, Right Hinge Moving: {isRightHingeMoving}");
+       // Debug.Log($"loggLeft Hinge Moving: {isLeftHingeMoving}, Right Hinge Moving: {isRightHingeMoving}");
 
 
         if ((isLeftHingeMoving || isRightHingeMoving) && !isPlaying)
         {
-            Debug.Log("loggPlaying Sound: Door is moving");
+           // Debug.Log("loggPlaying Sound: Door is moving");
             audioSource.loop = true;            
             audioSource.PlayOneShot(movingSound); 
             isPlaying = true;

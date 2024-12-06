@@ -9,6 +9,6 @@ public class BadKey : Keys
     {
         base.Ending();
         ending.SetActive(true);
-        Debug.Log("ending");
+       // Debug.Log("ending");
     }
 }

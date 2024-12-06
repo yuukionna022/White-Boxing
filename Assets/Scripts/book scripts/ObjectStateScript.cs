@@ -56,20 +56,23 @@ public class ObjectStateScript
 
     protected virtual void OnGrabbed(SelectEnterEventArgs args)
     {
-        if (args.interactorObject is XRDirectInteractor)
-        {
-            grabbed = true;
-            // Debug.Log(grabbed);
-        }
+            if (args.interactorObject is XRRayInteractor)
+            {
+                grabbed = true;
+                //Debug.Log(grabbed);
+            }
+
     }
 
     protected virtual void OnReleased(SelectExitEventArgs args)
     {
-        if (args.interactorObject is XRDirectInteractor)
-        {
-            grabbed = false;
-            //  Debug.Log(grabbed);
-        }
+
+            if (args.interactorObject is XRRayInteractor)
+            {
+                grabbed = false;
+                //  Debug.Log(grabbed);
+            }
+        
     }
 
     public bool Dropped()

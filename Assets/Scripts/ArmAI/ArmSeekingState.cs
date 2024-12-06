@@ -24,17 +24,17 @@ public class ArmSeekingState : MonoBehaviour
             if (hitInfo.collider.gameObject.layer == layerToHit || hitInfo.collider.gameObject.tag == "Player")
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(new Vector3(0, -1, 0)) * 1f, Color.green);
-                Debug.Log("player hit");
+                //Debug.Log("player hit");
             }
             else
             {
-                Debug.Log("player not hit");
+               // Debug.Log("player not hit");
                 Debug.DrawRay(transform.position, transform.TransformDirection(new Vector3(0, -1, 0)) * 1f, Color.red);
             }
 
 
-            Debug.Log("Layer: " + hitInfo.collider.gameObject.layer);
-            Debug.Log("Tag: " + hitInfo.collider.tag);
+           // Debug.Log("Layer: " + hitInfo.collider.gameObject.layer);
+           // Debug.Log("Tag: " + hitInfo.collider.tag);
 
             //Some arm seeking actions
         }

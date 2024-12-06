@@ -35,22 +35,28 @@ public class TeleportPlayer : MonoBehaviour
                 //storePosition.transform.position = player.transform.position;
                 //teleport the player
                 player.transform.position = destinationObject.transform.position;
-                
+
                 if (destinationObject.name == "MenuDestination")
                 {
+                    player.transform.position = destinationObject.transform.position;
+
                     //Debug.Log("look");
                     var look = screen.transform.position - player.transform.position;
                     look.y = 0;
                     var rotation = Quaternion.LookRotation(look);
                     player.transform.rotation = rotation;
-
-                } else if (destinationObject.name == "PlayGameDestination")
-                {
-                    var xrCam = Camera.main.transform;
-                    var offset = xrCam.localPosition;
-
-                    player.transform.position = destinationObject.transform.position - offset;
                 }
+
+                //} else if (destinationObject.name == "PlayGameDestination")
+                //{
+                //    var xrCam = Camera.main.transform;
+                //    var offset = xrCam.localPosition;
+
+                //    player.transform.position = destinationObject.transform.position - offset;
+                //} else
+                //{
+                //    player.transform.position = destinationObject.transform.position;
+                //}
                  
              
                 teleportingPlayer = false;
@@ -74,5 +80,10 @@ public class TeleportPlayer : MonoBehaviour
         {
             player.transform.position = storePosition.transform.position;
         }
+    }
+
+    public bool Teleporting()
+    {
+        return teleportingPlayer;
     }
 }

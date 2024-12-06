@@ -12,12 +12,12 @@ public class AudioFade : MonoBehaviour
        
         if (AreCollidersTouching(playerCollider, floorCollider))
         {
-            Debug.Log("The colliders are touching!");
+          //  Debug.Log("The colliders are touching!");
           
         }
         else
         {
-            Debug.Log("The colliders are not touching.");
+          //  Debug.Log("The colliders are not touching.");
         }
     }
 

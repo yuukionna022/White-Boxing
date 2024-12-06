@@ -57,7 +57,7 @@ public class Flashlight : MonoBehaviour
         if (batteryOn)
         {
             //Run down timer for battery life
-            Debug.Log("light intensity: " + _light.intensity);
+            //Debug.Log("light intensity: " + _light.intensity);
             _light.intensity -= Time.deltaTime / batteryLife;
         }
         if (_light.intensity < 0.7 && _light.intensity > 0.3)

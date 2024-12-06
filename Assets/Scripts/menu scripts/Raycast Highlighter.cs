@@ -46,7 +46,8 @@ public class RaycastHighlighter : MonoBehaviour
 
                 originalMaterial = rend.sharedMaterial;
 
-                tempMaterial = new Material(originalMaterial);
+                if (originalMaterial!= null) {
+                    tempMaterial = new Material(originalMaterial); }
                 rend.material = tempMaterial;
                 rend.material.color = highlightColor;
             }
