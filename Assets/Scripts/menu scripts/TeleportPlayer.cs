@@ -24,15 +24,19 @@ public class TeleportPlayer : MonoBehaviour
     {
         if (teleportingPlayer == true)
         {
+            
+            
+
             //Debug.Log("teleport Player");
             slider += Time.deltaTime / transitionTime;
             if (slider >= 0.5)
             {
                 //store the player position
-                storePosition.transform.position = player.transform.position;
+                //storePosition.transform.position = player.transform.position;
                 //teleport the player
                 player.transform.position = destinationObject.transform.position;
-                if (destinationObject == menu)
+                
+                if (destinationObject.name == "MenuDestination")
                 {
                     //Debug.Log("look");
                     var look = screen.transform.position - player.transform.position;
@@ -40,9 +44,8 @@ public class TeleportPlayer : MonoBehaviour
                     var rotation = Quaternion.LookRotation(look);
                     player.transform.rotation = rotation;
                 }
-
-
-
+                 
+             
                 teleportingPlayer = false;
             }
         }
@@ -55,6 +58,7 @@ public class TeleportPlayer : MonoBehaviour
     public void teleportPlayer()
     {
         teleportingPlayer = true;
+        storePosition.transform.position = player.transform.position;
     }
     public void teleportPlayerBack()
     {

@@ -10545,8 +10545,8 @@ MonoBehaviour:
   player: {fileID: 544969323}
   storePosition: {fileID: 773877172}
   destinationObject: {fileID: 689772552}
-  screen: {fileID: 0}
-  menu: {fileID: 0}
+  screen: {fileID: 693781520}
+  menu: {fileID: 689772552}
   transitionTime: 2
 --- !u!114 &421637871
 MonoBehaviour:
