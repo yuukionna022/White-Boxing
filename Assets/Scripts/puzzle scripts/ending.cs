@@ -16,6 +16,7 @@ public class ending : MonoBehaviour
     private bool drop = false;
     public AudioSource audioSource;
     public AudioClip unlockSound;
+    private bool playedSound = false;
 
     void OnTriggerEnter(Collider Col)
     {
@@ -36,7 +37,11 @@ public class ending : MonoBehaviour
                 final = bad;
             }
             //Play unlock sound
-            audioSource.PlayOneShot(unlockSound);
+            if(!playedSound){
+                audioSource.PlayOneShot(unlockSound);
+                playedSound = true;
+            }
+            
 
             final.Ending();
             //Debug.Log("final door opened");

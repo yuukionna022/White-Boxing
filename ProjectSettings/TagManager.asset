@@ -14,6 +14,7 @@ TagManager:
   - Arrow
   - Key Highlight
   - white walls
+  - Floor
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,7 @@ public class DropItems : MonoBehaviour
     protected bool collided = false;
     public AudioSource audioSource;
     public AudioClip unlockSound;
+    public bool playedSound = false;
 
 
     void OnTriggerEnter(Collider Col)
@@ -22,7 +23,10 @@ public class DropItems : MonoBehaviour
             if (conditions.getState() == 1 && conditions.getPuzzleOne())
             {
                 collided = true;
-                audioSource.PlayOneShot(unlockSound);
+                if(!playedSound){
+                    audioSource.PlayOneShot(unlockSound);
+                    playedSound = true;
+                }                
             }
             //else if (conditions.getState() == 2 && conditions.getPuzzleTwo())
             //{
