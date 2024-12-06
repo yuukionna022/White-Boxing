@@ -34,7 +34,7 @@ public class TeleportPlayer : MonoBehaviour
                 player.transform.position = destinationObject.transform.position;
                 if (destinationObject == menu)
                 {
-                    Debug.Log("look");
+                    //Debug.Log("look");
                     var look = screen.transform.position - player.transform.position;
                     look.y = 0;
                     var rotation = Quaternion.LookRotation(look);
