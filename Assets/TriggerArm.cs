@@ -23,7 +23,7 @@ public class TriggerArm : MonoBehaviour
             position = mainCam.transform.position;
             monster.SetActive(true);
             moveForward.SetTarget(position);
-
+            this.gameObject.SetActive(false);
         }
     }
 }

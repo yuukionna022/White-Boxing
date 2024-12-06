@@ -21,6 +21,8 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       // target = new Vector3(mainCam.transform.position.x, mainCam.transform.position.y, mainCam.transform.position.z+0.2f);
+       // transform.LookAt(target);
         transform.Translate(0f, 0f, speed * Time.deltaTime);
     }
 
@@ -38,7 +40,7 @@ public class MoveForward : MonoBehaviour
     public void SetTarget(Vector3 target)
     {
         //this.target = new Vector3(target.x, mainCam.transform.position.y, target.z);
-        this.target = new Vector3 (target.x-0.02f, target.y, target.z);
+        this.target = new Vector3 (target.x, target.y, target.z);
         transform.LookAt(target);
     }
 }
