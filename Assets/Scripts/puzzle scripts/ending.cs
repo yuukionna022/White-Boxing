@@ -49,8 +49,8 @@ public class ending : MonoBehaviour
             //badKey.GetComponent<XRGrabInteractable>().enabled = false;
             //goodKey.GetComponent<MeshRenderer>().enabled = false;
             //badKey.GetComponent<MeshRenderer>().enabled = false;
-           // raycastL.GetComponent<XRInteractorLineVisual>().enabled = false;
-            //raycastR.GetComponent<XRInteractorLineVisual>().enabled = false;
+            raycastL.GetComponent<XRInteractorLineVisual>().enabled = false;
+            raycastR.GetComponent<XRInteractorLineVisual>().enabled = false;
             drop = true;
         }
     }

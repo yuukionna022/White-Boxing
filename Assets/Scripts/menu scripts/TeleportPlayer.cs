@@ -11,10 +11,12 @@ public class TeleportPlayer : MonoBehaviour
     public float transitionTime;
     private float slider;
     private bool teleportingPlayer;
+    private Quaternion angle;
     // Start is called before the first frame update
     void Start()
     {
         slider = 0;
+        angle = new Quaternion(0, 0, 0, 1);
         teleportingPlayer = false;
     }
 
@@ -31,6 +33,10 @@ public class TeleportPlayer : MonoBehaviour
                 storePosition.transform.position = player.transform.position;
                 //teleport the player
                 player.transform.position = destinationObject.transform.position;
+                if (player.transform.rotation != angle)
+                {
+                    player.transform.rotation = angle;
+                }
 
                 teleportingPlayer = false;
             }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class EndingTransition : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class EndingTransition : MonoBehaviour
     public TeleportTransition transition;
     public Collider player;
     private bool enable = false;
+    public GameObject raycastL, raycastR;
 
     protected virtual void OnTriggerEnter(Collider other)
     {
@@ -16,7 +18,8 @@ public class EndingTransition : MonoBehaviour
         {
             transition.fadeTransition();
             teleport.teleportPlayer();
-
+            raycastL.GetComponent<XRInteractorLineVisual>().enabled = true;
+            raycastR.GetComponent<XRInteractorLineVisual>().enabled = true;
         }
     }
 
