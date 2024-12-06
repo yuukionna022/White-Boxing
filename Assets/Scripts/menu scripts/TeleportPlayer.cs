@@ -43,6 +43,13 @@ public class TeleportPlayer : MonoBehaviour
                     look.y = 0;
                     var rotation = Quaternion.LookRotation(look);
                     player.transform.rotation = rotation;
+
+                } else if (destinationObject.name == "PlayGameDestination")
+                {
+                    var xrCam = Camera.main.transform;
+                    var offset = xrCam.localPosition;
+
+                    player.transform.position = destinationObject.transform.position - offset;
                 }
                  
              
