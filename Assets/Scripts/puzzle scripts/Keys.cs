@@ -47,7 +47,7 @@ public class Keys : MonoBehaviour
         grabbed = true;
     }
 
-    protected void OnReleased(SelectExitEventArgs args)
+    protected virtual void OnReleased(SelectExitEventArgs args)
     {
        
         grabbed = false;

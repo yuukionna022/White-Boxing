@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
     private Vector3 target;
-    public GameObject mainCam;
+    public GameObject mainCam, child;
     public Collider player;
     public EndingTransition transition;
     public TriggerArm trigger;
@@ -31,7 +31,7 @@ public class MoveForward : MonoBehaviour
         if(other == player)
         {
             transition.SetEnabled();
-            //gameObject.SetActive(false);
+            child.SetActive(false);
             this.enabled = false;
 
         }
@@ -40,7 +40,7 @@ public class MoveForward : MonoBehaviour
     public void SetTarget(Vector3 target)
     {
         //this.target = new Vector3(target.x, mainCam.transform.position.y, target.z);
-        this.target = new Vector3 (target.x, target.y, target.z);
+        this.target = new Vector3 (target.x - 0.15f, target.y, target.z);
         transform.LookAt(target);
     }
 }

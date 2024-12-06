@@ -11,7 +11,7 @@ public class ending : MonoBehaviour
     public Keys good, bad;
     private Keys final;
     public Collider barrier;
-    public GameObject rigidDoor, exitDoor, goodKey, badKey, raycastL, raycastR;
+    public GameObject rigidDoor, exitDoor, goodKey, badKey;
     public PuzzleConditions conditions;
     private bool drop = false;
     public AudioSource audioSource;
@@ -54,8 +54,6 @@ public class ending : MonoBehaviour
             //badKey.GetComponent<XRGrabInteractable>().enabled = false;
             //goodKey.GetComponent<MeshRenderer>().enabled = false;
             //badKey.GetComponent<MeshRenderer>().enabled = false;
-            raycastL.GetComponent<XRInteractorLineVisual>().enabled = false;
-            raycastR.GetComponent<XRInteractorLineVisual>().enabled = false;
             drop = true;
         }
     }
