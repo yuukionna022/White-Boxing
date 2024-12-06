@@ -13,7 +13,7 @@ public class PuzzleOne : MonoBehaviour
     {
         if(key.Grabbed())
         {
-            //Debug.Log("true");
+            Debug.Log("unlock");
             puzzle.setPuzzleOne(true);
        
         }

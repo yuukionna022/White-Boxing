@@ -9,6 +9,7 @@ public class BookGrabbable : MonoBehaviour
     public GameObject player, book;
     public DropItems barrier;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,10 @@ public class BookGrabbable : MonoBehaviour
         }
         currentState = currentState.Process();
         //Debug.Log(currentState.name);
+        if (Grabbed())
+        {
+            Debug.Log(currentState.interactable.gameObject.name);
+        }
 
     }
 
@@ -34,6 +39,6 @@ public class BookGrabbable : MonoBehaviour
 
     public bool Grabbed()
     {
-        return currentState.Grabbed();
+        return (currentState.Grabbed()&&currentState.isGrabbed);
     }
 }

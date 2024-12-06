@@ -17,9 +17,9 @@ public class ObjectStateScript
 
     public STATE name;
     protected EVENT stage;
-    protected XRGrabInteractable interactable;
+    public XRGrabInteractable interactable;
     protected ObjectStateScript nextState;
-    protected bool grabbed;
+    public bool grabbed, isGrabbed;
     protected bool drop;
     protected GameObject player;
     protected GameObject self;
@@ -31,6 +31,7 @@ public class ObjectStateScript
         this.player = player;
         this.self = self;
         grabbed = false;
+        isGrabbed = false;
         drop = false;
         interactable.selectEntered.AddListener(OnGrabbed);
         interactable.selectExited.AddListener(OnReleased);
@@ -55,14 +56,20 @@ public class ObjectStateScript
 
     protected virtual void OnGrabbed(SelectEnterEventArgs args)
     {
-        grabbed = true;
-       // Debug.Log(grabbed);
+        if (args.interactorObject is XRDirectInteractor)
+        {
+            grabbed = true;
+            // Debug.Log(grabbed);
+        }
     }
 
     protected virtual void OnReleased(SelectExitEventArgs args)
     {
-        grabbed = false;
-      //  Debug.Log(grabbed);
+        if (args.interactorObject is XRDirectInteractor)
+        {
+            grabbed = false;
+            //  Debug.Log(grabbed);
+        }
     }
 
     public bool Dropped()
@@ -89,7 +96,6 @@ public class Grabbable : ObjectStateScript
         name = STATE.GRABBABLE;
         interactable.enabled = true;
         grabbed = false;
-        Debug.Log("Grabbable" + grabbed);
     }
 
     public override void Enter()
@@ -103,7 +109,7 @@ public class Grabbable : ObjectStateScript
     {
        // UnityEngine.Debug.Log("grabbable");
 
-        if (grabbed)
+        if (grabbed && interactable.isSelected)
         {
             nextState = new Grabbed(interactable, player, self);
             stage = EVENT.EXIT;
@@ -122,7 +128,7 @@ public class Grabbed : ObjectStateScript
     {
         name = STATE.GRABBED;
         grabbed = true;
-        Debug.Log("Grabbed" + grabbed);
+        isGrabbed = true;
     }
 
     public override void Enter()
@@ -163,7 +169,6 @@ public class Dropped : ObjectStateScript
         name = STATE.DROPPED;
         interactable.enabled = false;
         grabbed = false;
-        Debug.Log("Dropped" + grabbed);
     }
 
     public override void Enter()

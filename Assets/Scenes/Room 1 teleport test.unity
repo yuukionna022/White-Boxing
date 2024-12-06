@@ -57984,7 +57984,6 @@ GameObject:
   - component: {fileID: 546463381869811870}
   - component: {fileID: 2607601714753555986}
   - component: {fileID: 2607601714753555987}
-  - component: {fileID: 2607601714753555989}
   - component: {fileID: 2607601714753555988}
   - component: {fileID: 2607601714753555990}
   m_Layer: 8
@@ -65504,20 +65503,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzle: {fileID: 544969334}
   key: {fileID: 2607601714753555990}
---- !u!114 &2607601714753555989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 594354909031743063}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a2844c9246e57458d8670e01fb145a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 544969323}
-  grabbed: 0
 --- !u!114 &2607601714753555990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73985,7 +73970,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7381699141865519881}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -76611,7 +76596,6 @@ GameObject:
   - component: {fileID: 7120092940763885944}
   - component: {fileID: 7120092940763885945}
   - component: {fileID: 7120092940763885946}
-  - component: {fileID: 7120092940763885947}
   - component: {fileID: 7120092940763885948}
   - component: {fileID: 7120092940763885951}
   - component: {fileID: 7120092940763885950}
@@ -86444,22 +86428,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0013275085, y: 0.011348601, z: 0.06608857}
   m_Center: {x: -0.004999381, y: -0.024175625, z: 0.0023279558}
---- !u!114 &7120092940763885947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5691745941953183757}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05c6cda4ee4fb34da3af13d127ad062, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  book: {fileID: 5691745941953183757}
-  key: {fileID: 594354909031743063}
-  player: {fileID: 1665777673}
-  isGrabbed: 0
 --- !u!114 &7120092940763885948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94539,7 +94507,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.010000007, y: 0.03589788, z: 0.010000005}
   m_Center: {x: -0.0000002395586, y: 0.012956536, z: -0.00000005960834}
@@ -97817,7 +97785,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.010000009, y: 0.010000174, z: 0.0032105937}
   m_Center: {x: -0.000009789517, y: 0.000011834206, z: -0.0033946505}
