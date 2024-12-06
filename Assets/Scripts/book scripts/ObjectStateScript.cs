@@ -53,13 +53,13 @@ public class ObjectStateScript
         return this;
     }
 
-    protected void OnGrabbed(SelectEnterEventArgs args)
+    protected virtual void OnGrabbed(SelectEnterEventArgs args)
     {
         grabbed = true;
        // Debug.Log(grabbed);
     }
 
-    protected void OnReleased(SelectExitEventArgs args)
+    protected virtual void OnReleased(SelectExitEventArgs args)
     {
         grabbed = false;
       //  Debug.Log(grabbed);
@@ -88,6 +88,8 @@ public class Grabbable : ObjectStateScript
     {
         name = STATE.GRABBABLE;
         interactable.enabled = true;
+        grabbed = false;
+        Debug.Log("Grabbable" + grabbed);
     }
 
     public override void Enter()
@@ -120,6 +122,7 @@ public class Grabbed : ObjectStateScript
     {
         name = STATE.GRABBED;
         grabbed = true;
+        Debug.Log("Grabbed" + grabbed);
     }
 
     public override void Enter()
@@ -159,6 +162,8 @@ public class Dropped : ObjectStateScript
     {
         name = STATE.DROPPED;
         interactable.enabled = false;
+        grabbed = false;
+        Debug.Log("Dropped" + grabbed);
     }
 
     public override void Enter()
