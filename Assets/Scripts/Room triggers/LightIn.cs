@@ -17,7 +17,6 @@ public class LightIn : MonoBehaviour
         
         if (other == door)
         {
-
             lights.SetActive(true);
         }
     }

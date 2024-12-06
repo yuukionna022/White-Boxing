@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class TeleportPlayer : MonoBehaviour
@@ -7,16 +8,14 @@ public class TeleportPlayer : MonoBehaviour
     public GameObject player;
     public GameObject storePosition;
     //public Vector3 destination;
-    public GameObject destinationObject;
+    public GameObject destinationObject, screen, menu;
     public float transitionTime;
     private float slider;
     private bool teleportingPlayer;
-    private Quaternion angle;
     // Start is called before the first frame update
     void Start()
     {
         slider = 0;
-        angle = new Quaternion(0, 0, 0, 1);
         teleportingPlayer = false;
     }
 
@@ -25,7 +24,7 @@ public class TeleportPlayer : MonoBehaviour
     {
         if (teleportingPlayer == true)
         {
-            Debug.Log("teleport Player");
+            //Debug.Log("teleport Player");
             slider += Time.deltaTime / transitionTime;
             if (slider >= 0.5)
             {
@@ -33,10 +32,16 @@ public class TeleportPlayer : MonoBehaviour
                 storePosition.transform.position = player.transform.position;
                 //teleport the player
                 player.transform.position = destinationObject.transform.position;
-                if (player.transform.rotation != angle)
+                if (destinationObject == menu)
                 {
-                    player.transform.rotation = angle;
+                    Debug.Log("look");
+                    var look = screen.transform.position - player.transform.position;
+                    look.y = 0;
+                    var rotation = Quaternion.LookRotation(look);
+                    player.transform.rotation = rotation;
                 }
+
+
 
                 teleportingPlayer = false;
             }
