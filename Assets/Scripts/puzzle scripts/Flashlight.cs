@@ -110,6 +110,11 @@ public class Flashlight : MonoBehaviour
             }
         }
 
+        if(_light.intensity <= 0)
+        {
+            //fade then teleport player to end room
+        }
+
     }
 
     public void LightOn()

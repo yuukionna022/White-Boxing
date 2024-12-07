@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class MenuBookScript : MonoBehaviour
 {
@@ -21,5 +22,11 @@ public class MenuBookScript : MonoBehaviour
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+    }
+
+    public void Quit()
+    {
+       
+
     }
 }
