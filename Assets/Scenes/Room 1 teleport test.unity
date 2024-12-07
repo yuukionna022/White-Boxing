@@ -11154,7 +11154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
-  collisionSound: {fileID: 0}
+  collisionSounds: []
+  minPitch: 0.8
+  maxPitch: 1.2
+  soundCooldown: 0.8
 --- !u!1001 &419922522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15411,7 +15414,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 548156035}
-  collisionSound: {fileID: 0}
+  collisionSounds: []
+  minPitch: 0.8
+  maxPitch: 1.2
+  soundCooldown: 0.8
 --- !u!1 &550402650
 GameObject:
   m_ObjectHideFlags: 0
@@ -27046,7 +27052,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e1a3a5e852a0d04488ef6d9c00196ca, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.843
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -27870,7 +27876,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1042412474}
-  collisionSound: {fileID: 0}
+  collisionSounds: []
+  minPitch: 0.8
+  maxPitch: 1.2
+  soundCooldown: 0.8
 --- !u!82 &1042412474 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6180572104324218855, guid: f7cdfa69816f4fe4ca623a07ae3e4181, type: 3}
@@ -50165,7 +50174,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1710142644}
-  collisionSound: {fileID: 0}
+  collisionSounds: []
+  minPitch: 0.8
+  maxPitch: 1.2
+  soundCooldown: 0.8
 --- !u!1 &1711459401
 GameObject:
   m_ObjectHideFlags: 0
@@ -50237,7 +50249,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1720382584}
-  collisionSound: {fileID: 0}
+  collisionSounds: []
+  minPitch: 0.8
+  maxPitch: 1.2
+  soundCooldown: 0.8
 --- !u!82 &1720382584 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6180572104324218855, guid: f7cdfa69816f4fe4ca623a07ae3e4181, type: 3}
@@ -56548,7 +56563,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935583351}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -90619,7 +90634,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.757
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -90744,13 +90759,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5691745941953183757}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3d5407849fa89c4aad38cd385216707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 7120092940763885949}
-  collisionSound: {fileID: 0}
+  collisionSounds:
+  - {fileID: 8300000, guid: ef35c94f32c353449b37aacd0072659e, type: 3}
+  - {fileID: 8300000, guid: ddc53e09125247d4fbbffbb65e35a959, type: 3}
+  minPitch: 0.8
+  maxPitch: 1.2
+  soundCooldown: 0.8
 --- !u!4 &7150577295085824145
 Transform:
   m_ObjectHideFlags: 0
@@ -97334,8 +97354,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d5407849fa89c4aad38cd385216707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  collisionSound: {fileID: 0}
+  audioSource: {fileID: 1007875480}
+  collisionSounds:
+  - {fileID: 8300000, guid: ddc53e09125247d4fbbffbb65e35a959, type: 3}
+  - {fileID: 8300000, guid: ef35c94f32c353449b37aacd0072659e, type: 3}
+  minPitch: 0.8
+  maxPitch: 1.2
+  soundCooldown: 0.8
 --- !u!1 &8085746844258577194
 GameObject:
   m_ObjectHideFlags: 0
