@@ -26,7 +26,8 @@ public class MenuBookScript : MonoBehaviour
 
     public void Quit()
     {
-       
+        Application.Quit();
+        Debug.Log("game exit");
 
     }
 }
