@@ -12,11 +12,15 @@ public class TeleportPlayer : MonoBehaviour
     public float transitionTime;
     private float slider;
     private bool teleportingPlayer;
+    private Quaternion storeRotation;
+    private bool teleportingPlayerBack;
     // Start is called before the first frame update
     void Start()
     {
         slider = 0;
         teleportingPlayer = false;
+        teleportingPlayerBack = false;
+        storeRotation = storePosition.transform.rotation;
     }
 
     // Update is called once per frame
@@ -24,17 +28,16 @@ public class TeleportPlayer : MonoBehaviour
     {
         if (teleportingPlayer == true)
         {
-            
-            
+
+
 
             //Debug.Log("teleport Player");
             slider += Time.deltaTime / transitionTime;
             if (slider >= 0.5)
             {
-                //store the player position
-                //storePosition.transform.position = player.transform.position;
                 //teleport the player
                 player.transform.position = destinationObject.transform.position;
+
 
                 if (destinationObject.name == "MenuDestination")
                 {
@@ -57,12 +60,25 @@ public class TeleportPlayer : MonoBehaviour
                 //{
                 //    player.transform.position = destinationObject.transform.position;
                 //}
-                 
-             
+
+
                 teleportingPlayer = false;
             }
         }
-        else
+        if (teleportingPlayerBack)
+        {
+            slider += Time.deltaTime / transitionTime;
+            if (slider >= 0.5)
+            {
+                player.transform.position = storePosition.transform.position;
+                player.transform.rotation = storeRotation;
+
+                teleportingPlayerBack = false;
+            }
+        }
+
+        //reset timer
+        if (!teleportingPlayer && !teleportingPlayerBack)
         {
             slider = 0;
         }
@@ -70,16 +86,13 @@ public class TeleportPlayer : MonoBehaviour
 
     public void teleportPlayer()
     {
-        teleportingPlayer = true;
         storePosition.transform.position = player.transform.position;
+        storeRotation = Quaternion.LookRotation(player.transform.position);
+        teleportingPlayer = true;
     }
     public void teleportPlayerBack()
     {
-        slider += Time.deltaTime / transitionTime;
-        if (slider >= 2)
-        {
-            player.transform.position = storePosition.transform.position;
-        }
+        teleportingPlayerBack = true;
     }
 
     public bool Teleporting()
