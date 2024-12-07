@@ -6,7 +6,7 @@ public class MoveForward : MonoBehaviour
 {
     private Vector3 target;
     public GameObject mainCam, child;
-    public Collider player;
+    public Collider player, lockDoorCol;
     public EndingTransition transition;
     public TriggerArm trigger;
     public float speed;
@@ -37,13 +37,13 @@ public class MoveForward : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other == player)
+        if(other == player || other == lockDoorCol)
         {
             transition.SetEnabled();
             child.SetActive(false);
             this.enabled = false;
 
-        }
+        } 
     }
 
     public void SetTarget(Vector3 target)
