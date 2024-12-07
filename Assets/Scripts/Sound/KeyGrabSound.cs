@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class GrabSound : MonoBehaviour
+public class KeyGrabSound : MonoBehaviour
 {
     public AudioClip[] pickupSounds;
     public AudioSource audioSource;
     public XRGrabInteractable grabInteractable;
+    public BookGrabbable bookGrabbable;
     private bool wasGrabbed = false;
 
     public float minPitch = 0.7f;
@@ -20,18 +21,18 @@ public class GrabSound : MonoBehaviour
 
     void Update()
     {
-        if (grabInteractable.isSelected)
+         if (bookGrabbable != null && bookGrabbable.Grabbed())
         {
             if (!wasGrabbed)
             {
                 playSound();
                 wasGrabbed = true;
-                Debug.Log("grabbed key");
+                Debug.Log("Grabbed object and played sound");
             }
         }
         else
         {
-            wasGrabbed = false; 
+            wasGrabbed = false; //reset
         }
         
     }
