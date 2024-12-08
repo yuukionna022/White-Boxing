@@ -124,6 +124,7 @@ public class Flashlight : MonoBehaviour
         }
         if (hasDied)
         {
+            end.setDrop(true);
             toggleMenu.badEndMenuActive();
             transitionScript.fadeTransition();
             teleportScript.teleportPlayer();
@@ -155,5 +156,9 @@ public class Flashlight : MonoBehaviour
     public bool FlashlightPickedUp()
     {
         return hasPickedUp;
+    }
+    public void refreshFlashlight()
+    {
+        _light.intensity = 1.1f;
     }
 }

@@ -62,4 +62,8 @@ public class ending : MonoBehaviour
     {
         return drop;
     }
+    public void setDrop(bool setting)
+    {
+        drop = setting;
+    }
 }
