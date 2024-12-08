@@ -32,7 +32,7 @@ public class FootstepScript : MonoBehaviour
     {
         //moving with keyboard test, isMoving updates every frame
         bool isMoving;
-        isMoving = Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d");
+        //isMoving = Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d");
 
         //occulus input test
         if (InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).TryGetFeatureValue(CommonUsages.primary2DAxis, out thumbstickInput))
@@ -50,7 +50,8 @@ public class FootstepScript : MonoBehaviour
         }
         else
         {
-           // Debug.Log("Not detected.");
+            // Debug.Log("Not detected.");
+            isMoving = false;
         }
 
         return isMoving;
