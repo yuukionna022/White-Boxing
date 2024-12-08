@@ -14,6 +14,10 @@ public class Flashlight : MonoBehaviour
     public GameObject player, self;
     public ending end;
     public Collider playerCol;
+    public TeleportPlayer teleportScript;
+    public TeleportTransition transitionScript;
+    public ToggleMenu toggleMenu;
+    private bool hasDied;
 
     private bool batteryOn;
     public float batteryLife;
@@ -42,6 +46,8 @@ public class Flashlight : MonoBehaviour
         flickerTime = 0.1f;
         gen = 0;
         tempLightIntensity = 0;
+
+        hasDied = false;
     }
 
     void Update()
@@ -113,6 +119,15 @@ public class Flashlight : MonoBehaviour
         if(_light.intensity <= 0)
         {
             //fade then teleport player to end room
+            hasDied = true;
+            _light.intensity = 1;
+        }
+        if (hasDied)
+        {
+            toggleMenu.badEndMenuActive();
+            transitionScript.fadeTransition();
+            teleportScript.teleportPlayer();
+            hasDied = false;
         }
 
     }

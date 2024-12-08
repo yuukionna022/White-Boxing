@@ -8,7 +8,9 @@ public class EndingTransition : MonoBehaviour
 
     public TeleportPlayer teleport;
     public TeleportTransition transition;
+    public ToggleMenu toggleMenu;
     public Collider player;
+    public string ending;
     private bool enable = false;
     public GameObject raycastL, raycastR;
 
@@ -18,6 +20,14 @@ public class EndingTransition : MonoBehaviour
         {
             transition.fadeTransition();
             teleport.teleportPlayer();
+            if (ending == "Good")
+            {
+                toggleMenu.goodEndMenuActive();
+            }
+            if (ending == "Bad")
+            {
+                toggleMenu.badEndMenuActive();
+            }
             raycastL.GetComponent<XRInteractorLineVisual>().enabled = true;
             raycastR.GetComponent<XRInteractorLineVisual>().enabled = true;
         }
