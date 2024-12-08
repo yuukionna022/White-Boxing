@@ -10,7 +10,7 @@ public class LockDoor : MonoBehaviour
     public TeleportFirstRoom room;
     public TeleportRoom room2;
     public GameObject self;
-    public Flashlight light;
+    public Flashlight flashlight;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,7 +23,7 @@ public class LockDoor : MonoBehaviour
             rigidDoor.SetActive(true);
             barrier1.SetActive(true);
             room.teleportRoom();
-            light.refreshFlashlight();
+            flashlight.refreshFlashlight();
             }
             
             //if (conditions.getPuzzleOne() && !conditions.getPuzzleTwo())
@@ -35,7 +35,7 @@ public class LockDoor : MonoBehaviour
             if(self.name == "third lock door" && conditions.getPuzzleTwo() && !conditions.getPuzzleThree())
             {
                 room2.teleportSecondTime();
-                light.refreshFlashlight();
+                flashlight.refreshFlashlight();
                 this.gameObject.SetActive(false);
             }
         }

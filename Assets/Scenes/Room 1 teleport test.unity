@@ -44145,7 +44145,7 @@ MonoBehaviour:
   room: {fileID: 1333387559}
   room2: {fileID: 210399392}
   self: {fileID: 1367909025}
-  light: {fileID: 1679421514}
+  flashlight: {fileID: 1679421514}
 --- !u!65 &1367909028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48138,7 +48138,7 @@ MonoBehaviour:
   room: {fileID: 1333387559}
   room2: {fileID: 210399392}
   self: {fileID: 1474812587}
-  light: {fileID: 1679421514}
+  flashlight: {fileID: 1679421514}
 --- !u!65 &1474812590
 BoxCollider:
   m_ObjectHideFlags: 0

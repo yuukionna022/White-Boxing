@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Room 1 teleport test.unity
+    guid: c5b527998aed42c42b3b128cb8fa8abb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 47e4e8752835bbe4da49b7080b65a2b6, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f77f4c683e3f69d4f9d00e3bc468dd47, type: 2}
