@@ -6,15 +6,20 @@ public class ToggleMenu : MonoBehaviour
 {
     public GameObject startMenu;
     public GameObject continueMenu;
-    private bool startMenuState, continueMenuState, triggerStart, triggerContinue;
+    public GameObject goodEndMenu, badEndMenu;
+    private bool startMenuState, continueMenuState, goodEndMenuState, badEndMenuState, triggerStart, triggerContinue, triggerGoodEnd, triggerBadEnd;
     private float slider;
     // Start is called before the first frame update
     void Start()
     {
         startMenuState = true;
         continueMenuState = false;
+        goodEndMenuState = false;
+        badEndMenuState = false;
         triggerStart = false;
         triggerContinue = false;
+        triggerGoodEnd = false;
+        triggerBadEnd = false;
         slider = 0;
     }
 
@@ -28,6 +33,8 @@ public class ToggleMenu : MonoBehaviour
             {
                 startMenuState = true;
                 continueMenuState = false;
+                goodEndMenuState = false;
+                badEndMenuState = false;
                 triggerStart = false;
                 slider = 0;
             }
@@ -39,7 +46,35 @@ public class ToggleMenu : MonoBehaviour
             {
                 startMenuState = false;
                 continueMenuState = true;
+                goodEndMenuState = false;
+                badEndMenuState = false;
                 triggerContinue = false;
+                slider = 0;
+            }
+        }
+        if (triggerGoodEnd)
+        {
+            slider += Time.deltaTime;
+            if (slider > 1)
+            {
+                startMenuState = false;
+                continueMenuState = false;
+                goodEndMenuState = true;
+                badEndMenuState = false;
+                triggerGoodEnd = false;
+                slider = 0;
+            }
+        }
+        if (triggerBadEnd)
+        {
+            slider += Time.deltaTime;
+            if (slider > 1)
+            {
+                startMenuState = false;
+                continueMenuState = false;
+                goodEndMenuState = false;
+                badEndMenuState = true;
+                triggerBadEnd = false;
                 slider = 0;
             }
         }
@@ -47,11 +82,29 @@ public class ToggleMenu : MonoBehaviour
         {
             startMenu.SetActive(true);
             continueMenu.SetActive(false);
+            goodEndMenu.SetActive(false);
+            badEndMenu.SetActive(false);
         }
         if (continueMenuState)
         {
             startMenu.SetActive(false);
             continueMenu.SetActive(true);
+            goodEndMenu.SetActive(false);
+            badEndMenu.SetActive(false);
+        }
+        if (goodEndMenuState)
+        {
+            startMenu.SetActive(false);
+            continueMenu.SetActive(false);
+            goodEndMenu.SetActive(true);
+            badEndMenu.SetActive(false);
+        }
+        if (badEndMenuState)
+        {
+            startMenu.SetActive(false);
+            continueMenu.SetActive(false);
+            goodEndMenu.SetActive(false);
+            badEndMenu.SetActive(true);
         }
     }
     public void startMenuActive()
@@ -61,5 +114,13 @@ public class ToggleMenu : MonoBehaviour
     public void continueMenuActive()
     {
         triggerContinue = true;
+    }
+    public void goodEndMenuActive()
+    {
+        triggerGoodEnd = true;
+    }
+    public void badEndMenuActive()
+    {
+        triggerBadEnd = true;
     }
 }
