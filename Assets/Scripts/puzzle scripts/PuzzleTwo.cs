@@ -8,12 +8,19 @@ public class PuzzleTwo : MonoBehaviour
     public PuzzleConditions conditions;
     public AudioSource audioSource;
     public AudioClip unlockSound;
+    public AudioClip confirmSound;
     private bool playedSound;
+    private bool playedSoundGreen;
+    private bool playedSoundBlue;
+    private bool playedSoundPurple;
     
     // Start is called before the first frame update
     void Start()
     {
         playedSound = false;
+        playedSoundGreen = false;
+        playedSoundBlue = false;
+        playedSoundPurple = false;
         
     }
 
@@ -33,5 +40,30 @@ public class PuzzleTwo : MonoBehaviour
             //Debug.Log(red.GetFulfilled() && green.GetFulfilled() && blue.GetFulfilled() && purple.GetFulfilled() && grey.GetFulfilled());
             //Debug.Log(conditions.getPuzzleTwo());
         }
+
+        if (green.GetFulfilled())
+        {
+            if(!playedSoundGreen){
+                audioSource.PlayOneShot(confirmSound);
+                playedSoundGreen = true;
+            }
+        }
+
+        if (blue.GetFulfilled())
+        {
+            if(!playedSoundBlue){
+                audioSource.PlayOneShot(confirmSound);
+                playedSoundBlue = true;
+            }
+        }
+
+        if (purple.GetFulfilled())
+        {
+            if(!playedSoundPurple){
+                audioSource.PlayOneShot(confirmSound);
+                playedSoundPurple = true;
+            }
+        }
+        
     }
 }
