@@ -39,7 +39,7 @@ public class FootstepScript : MonoBehaviour
         {
             if (thumbstickInput.magnitude > 0.1f)
             {
-               // Debug.Log("Moving");
+                Debug.Log("Moving");
                 isMoving = true;
             }
             else
